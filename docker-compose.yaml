@@ -5,4 +5,4 @@ services:
     container_name: vpn-telegram-bot
     build: .
     volumes:
-      - logs.log:logs.log
+      - ./logs.log:./logs.log
