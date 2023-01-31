@@ -4,3 +4,5 @@ services:
     network_mode: host
     container_name: vpn-telegram-bot
     build: .
+    volumes:
+      - logs.log:logs.log
