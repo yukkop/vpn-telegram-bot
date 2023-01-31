@@ -1,8 +1,8 @@
-﻿botToken: '1456257916:AAFXlGP9xZgWEwZzkgtTr03a9M4vZPZ-r2I'
+﻿botToken: '5965008171:AAGsp9wshkkBz6pHAZp7EUcRHepIbSJ1mdQ'
 layoutsPath: 'layouts.yaml'
 backend:
-  host: 'localhost'
+  host: '185.41.160.153'
   port: '8083'
 bot:
-  host: '185.41160.153'
+  host: '185.41.160.153'
   port: '8085'

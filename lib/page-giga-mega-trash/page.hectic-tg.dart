@@ -175,13 +175,37 @@ class Page {
   static Future edit(TeleDart teleDart, Message pageMessage, User user,
       String text, InlineKeyboardMarkup? markup,
       [parseMode = "Markdown"]) async {
-    teleDart.editMessageText(
-      text,
-      chat_id: pageMessage.chat.id,
-      message_id: pageMessage.message_id,
-      reply_markup: markup,
-      parse_mode: parseMode,
-    );
+    try {
+      if (markupEq(pageMessage.reply_markup, markup)) {
+        teleDart.editMessageText(
+          text,
+          chat_id: pageMessage.chat.id,
+          message_id: pageMessage.message_id,
+          parse_mode: parseMode,
+        );
+      } else {
+        teleDart.editMessageText(
+          text,
+          chat_id: pageMessage.chat.id,
+          message_id: pageMessage.message_id,
+          reply_markup: markup,
+          parse_mode: parseMode,
+        );
+      }
+    } catch (e) {}
   }
   // end regiong
+
+  static bool markupEq(InlineKeyboardMarkup? a, InlineKeyboardMarkup? b) {
+    if (a == null && b == null) {
+      return true;
+    }
+    if (a == null || b == null) {
+      return false;
+    }
+    if (a.toJson() == b.toJson()) {
+      return true;
+    }
+    return false;
+  }
 }
