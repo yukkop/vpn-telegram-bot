@@ -24,11 +24,24 @@ import 'pages/region/choice-region.page.dart';
 import 'package:shelf_proxy/shelf_proxy.dart';
 import 'pages/region/instruction.message.dart';
 
+SecurityContext getSecurityContext() {
+  // Bind with a secure HTTPS connection
+  final chain = Platform.script
+      .resolve('/etc/nginx/ssl/vm-bd4a57f8_na4u_ru.crt')
+      .toFilePath();
+  final key = Platform.script
+      .resolve('/etc/nginx/ssl/vm-bd4a57f8_na4u_ru.key')
+      .toFilePath();
+
+  return SecurityContext()
+    ..useCertificateChain(chain)
+    ..usePrivateKey(key, password: 'dartdart');
+}
+
 Future<void> main() async {
   Loger.log('Program starting..');
 
-  final router = Router()
-    ..add('get', '/', proxyHandler("https://https://vm-bd4a57f8.na4u.ru"));
+  final router = Router();
   EventController(router: router).addHandlers();
 
   final ip = InternetAddress.anyIPv4;
@@ -37,7 +50,8 @@ Future<void> main() async {
 
   // For running in containers, we respect the PORT environment variable.
   final port = int.parse(Platform.environment['PORT'] ?? '8085');
-  final server = await serve(handler, ip, port);
+  final server =
+      await serve(handler, ip, port, securityContext: getSecurityContext());
 
   Loger.log('Server listening on port ${server.port}');
 
