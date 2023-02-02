@@ -26,12 +26,8 @@ import 'pages/region/instruction.message.dart';
 
 SecurityContext getSecurityContext() {
   // Bind with a secure HTTPS connection
-  final chain = Platform.script
-      .resolve('/etc/nginx/ssl/vm-bd4a57f8_na4u_ru.crt')
-      .toFilePath();
-  final key = Platform.script
-      .resolve('/etc/nginx/ssl/vm-bd4a57f8_na4u_ru.key')
-      .toFilePath();
+  final chain = Platform.script.resolve('./hostname.crt').toFilePath();
+  final key = Platform.script.resolve('./hostname.key').toFilePath();
 
   return SecurityContext()
     ..useCertificateChain(chain)
