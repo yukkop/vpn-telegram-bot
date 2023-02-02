@@ -66,12 +66,8 @@ Future<void> main() async {
   //     await serve(handler, ip, port, securityContext: getSecurityContext());
 
   var servers = await letsEncrypt.startSecureServer(
-    handler,
-    domain,
-    domainEmail,
-    port: port,
-    securePort: 443,
-  );
+      handler, domain, domainEmail,
+      port: port, securePort: 443, requestCertificate: false);
 
   var server = servers[0]; // HTTP Server.
   var serverSecure = servers[1]; // HTTPS Server.
