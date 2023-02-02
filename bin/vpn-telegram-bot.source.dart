@@ -28,8 +28,7 @@ Future<void> main() async {
   Loger.log('Program starting..');
 
   final router = Router()
-    ..add('get', 'localhost:8085',
-        proxyHandler("https://https://vm-bd4a57f8.na4u.ru"));
+    ..add('get', '/', proxyHandler("https://https://vm-bd4a57f8.na4u.ru"));
   EventController(router: router).addHandlers();
 
   final ip = InternetAddress.anyIPv4;
