@@ -38,11 +38,13 @@ SecurityContext getSecurityContext() {
 Future<void> main() async {
   var domain = 'vm-bd4a57f8.na4u.ru'; // Domain for the HTTPS certificate.
   var domainEmail = 'hectic.yukkop@gmail.com';
-  var certificatesDirectory = './';
+  var certificatesDirectory = '/app/bin/';
 
   // The Certificate handler, storing at `certificatesDirectory`.
-  final certificatesHandler =
-      CertificatesHandlerIO(Directory(certificatesDirectory));
+  final certificatesHandler = CertificatesHandlerIO(
+      Directory(certificatesDirectory),
+      publicKeyPEMFileName: "hostname.key",
+      fullChainPEMFileName: "hostname.crt");
 
   // The Let's Encrypt integration tool in `staging` mode:
   final LetsEncrypt letsEncrypt =
