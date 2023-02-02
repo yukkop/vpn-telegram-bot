@@ -25,34 +25,7 @@ import 'package:shelf_proxy/shelf_proxy.dart';
 import 'pages/region/instruction.message.dart';
 import 'package:shelf_letsencrypt/shelf_letsencrypt.dart';
 
-SecurityContext getSecurityContext() {
-  // Bind with a secure HTTPS connection
-  final chain = Platform.script.resolve('/app/bin/hostname.crt').toFilePath();
-  final key = Platform.script.resolve('/app/bin/hostname.key').toFilePath();
-
-  return SecurityContext()
-    ..useCertificateChain(chain)
-    ..usePrivateKey(key, password: 'dartdart');
-}
-
 Future<void> main() async {
-  var domain = 'vm-bd4a57f8.na4u.ru'; // Domain for the HTTPS certificate.
-  var domainEmail = 'hectic.yukkop@gmail.com';
-  var certificatesDirectory = '/app/bin/';
-
-  // The Certificate handler, storing at `certificatesDirectory`.
-  final certificatesHandler = CertificatesHandlerIO(
-      Directory(certificatesDirectory),
-      publicKeyPEMFileName: "hostname.key",
-      fullChainPEMFileName: "hostname.crt");
-
-  // The Let's Encrypt integration tool in `staging` mode:
-  final LetsEncrypt letsEncrypt =
-      LetsEncrypt(certificatesHandler, production: true);
-
-  // `shelf` Pipeline:
-  var pipeline = const Pipeline().addMiddleware(logRequests());
-
   Loger.log('Program starting..');
 
   final router = Router();
@@ -64,21 +37,7 @@ Future<void> main() async {
 
   // For running in containers, we respect the PORT environment variable.
   final port = int.parse(Platform.environment['PORT'] ?? '8085');
-  // final server =
-  //     await serve(handler, ip, port, securityContext: getSecurityContext());
-
-  var servers = await letsEncrypt.startSecureServer(
-      handler, domain, domainEmail,
-      port: port, securePort: 443, requestCertificate: false);
-
-  var server = servers[0]; // HTTP Server.
-  var serverSecure = servers[1]; // HTTPS Server.
-
-  // Enable gzip:
-  server.autoCompress = true;
-  serverSecure.autoCompress = true;
-  print('Serving at http://${server.address.host}:${server.port}');
-  print('Serving at https://${serverSecure.address.host}:${serverSecure.port}');
+  final server = await serve(handler, ip, port);
 
   Loger.log('Server listening on port ${server.port}');
 
