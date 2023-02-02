@@ -46,7 +46,7 @@ Future<void> main() async {
 
   // The Let's Encrypt integration tool in `staging` mode:
   final LetsEncrypt letsEncrypt =
-      LetsEncrypt(certificatesHandler, production: false);
+      LetsEncrypt(certificatesHandler, production: true);
 
   // `shelf` Pipeline:
   var pipeline = const Pipeline().addMiddleware(logRequests());
