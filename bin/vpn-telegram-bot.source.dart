@@ -26,8 +26,8 @@ import 'pages/region/instruction.message.dart';
 
 SecurityContext getSecurityContext() {
   // Bind with a secure HTTPS connection
-  final chain = Platform.script.resolve('./hostname.crt').toFilePath();
-  final key = Platform.script.resolve('./hostname.key').toFilePath();
+  final chain = Platform.script.resolve('/app/bin/hostname.crt').toFilePath();
+  final key = Platform.script.resolve('/app/bin/hostname.key').toFilePath();
 
   return SecurityContext()
     ..useCertificateChain(chain)
