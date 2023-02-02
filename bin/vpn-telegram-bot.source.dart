@@ -23,6 +23,7 @@ import 'pages/system/restart.page.dart';
 import 'pages/region/choice-region.page.dart';
 import 'package:shelf_proxy/shelf_proxy.dart';
 import 'pages/region/instruction.message.dart';
+import 'package:shelf_letsencrypt/shelf_letsencrypt.dart';
 
 SecurityContext getSecurityContext() {
   // Bind with a secure HTTPS connection
@@ -35,6 +36,21 @@ SecurityContext getSecurityContext() {
 }
 
 Future<void> main() async {
+  var domain = ''; // Domain for the HTTPS certificate.
+  var domainEmail = '';
+  var certificatesDirectory = './';
+
+  // The Certificate handler, storing at `certificatesDirectory`.
+  final certificatesHandler =
+      CertificatesHandlerIO(Directory(certificatesDirectory));
+
+  // The Let's Encrypt integration tool in `staging` mode:
+  final LetsEncrypt letsEncrypt =
+      LetsEncrypt(certificatesHandler, production: false);
+
+  // `shelf` Pipeline:
+  var pipeline = const Pipeline().addMiddleware(logRequests());
+
   Loger.log('Program starting..');
 
   final router = Router();
@@ -46,8 +62,25 @@ Future<void> main() async {
 
   // For running in containers, we respect the PORT environment variable.
   final port = int.parse(Platform.environment['PORT'] ?? '8085');
-  final server =
-      await serve(handler, ip, port, securityContext: getSecurityContext());
+  // final server =
+  //     await serve(handler, ip, port, securityContext: getSecurityContext());
+
+  var servers = await letsEncrypt.startSecureServer(
+    handler,
+    domain,
+    domainEmail,
+    port: port,
+    securePort: 443,
+  );
+
+  var server = servers[0]; // HTTP Server.
+  var serverSecure = servers[1]; // HTTPS Server.
+
+  // Enable gzip:
+  server.autoCompress = true;
+  serverSecure.autoCompress = true;
+  print('Serving at http://${server.address.host}:${server.port}');
+  print('Serving at https://${serverSecure.address.host}:${serverSecure.port}');
 
   Loger.log('Server listening on port ${server.port}');
 
