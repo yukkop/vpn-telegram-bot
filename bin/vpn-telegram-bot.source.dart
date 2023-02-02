@@ -21,12 +21,15 @@ import 'pages/rate.page.dart';
 import 'pages/system/empty.page.dart';
 import 'pages/system/restart.page.dart';
 import 'pages/region/choice-region.page.dart';
+import 'package:shelf_proxy/shelf_proxy.dart';
 import 'pages/region/instruction.message.dart';
 
 Future<void> main() async {
   Loger.log('Program starting..');
 
-  final router = Router();
+  final router = Router()
+    ..add('get', 'localhost:8085',
+        proxyHandler("https://https://vm-bd4a57f8.na4u.ru"));
   EventController(router: router).addHandlers();
 
   final ip = InternetAddress.anyIPv4;
@@ -36,6 +39,7 @@ Future<void> main() async {
   // For running in containers, we respect the PORT environment variable.
   final port = int.parse(Platform.environment['PORT'] ?? '8085');
   final server = await serve(handler, ip, port);
+
   Loger.log('Server listening on port ${server.port}');
 
   // region setup teledart
