@@ -36,7 +36,7 @@ SecurityContext getSecurityContext() {
 }
 
 Future<void> main() async {
-  var domain = ''; // Domain for the HTTPS certificate.
+  var domain = 'vm-bd4a57f8.na4u.ru'; // Domain for the HTTPS certificate.
   var domainEmail = '';
   var certificatesDirectory = './';
 
