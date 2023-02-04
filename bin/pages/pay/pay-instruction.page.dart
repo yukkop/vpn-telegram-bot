@@ -30,7 +30,7 @@ Future<Response> iokassaReques(
             "type": "redirect",
             "return_url": "http://${Configurations.botHost}/iokassa/$userId/$messageId/$days"
           },
-          "description": "$userId;$messageId;$price;$days)}"
+          "description": "$userId;$messageId;$price;$days"
         }''');
   return response;
 }
