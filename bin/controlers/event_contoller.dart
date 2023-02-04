@@ -27,14 +27,11 @@ class EventController extends IController {
   }
 
   Future<Response> _testSubscribe(Request req) async {
-    print(req.toString());
-    print(req.readAsString());
     var body = await req.readAsString();
-    var postData = jsonDecode(body);
 
     final teleDart = GetIt.I<TeleDart>();
 
-    teleDart.sendMessage(380055934, postData);
+    teleDart.sendMessage(380055934, body);
 
     return Response.ok('Notified');
   }
