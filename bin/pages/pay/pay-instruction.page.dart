@@ -40,9 +40,8 @@ final payFor1Day = Page(
   text: Text.function((pageMessage, user) async {
     var days = 1;
 
-    var responseBody = jsonDecode((await iokassaReques(
-            user.id, pageMessage.message_id, days * priceForDay, days))
-        .body);
+    var responseBody = jsonDecode(
+        (await iokassaReques(user.id, pageMessage.message_id, 100, days)).body);
 
     return 'Оплатите по сылке ${responseBody['confirmation']['confirmation_url']}';
   }),
@@ -54,9 +53,8 @@ final payFor1Week = Page(
   text: Text.function((pageMessage, user) async {
     var days = 7;
 
-    var responseBody = jsonDecode((await iokassaReques(
-            user.id, pageMessage.message_id, days * priceForDay, days))
-        .body);
+    var responseBody = jsonDecode(
+        (await iokassaReques(user.id, pageMessage.message_id, 300, days)).body);
 
     return 'Оплатите по сылке ${responseBody['confirmation']['confirmation_url']}';
   }),
@@ -68,9 +66,8 @@ final payFor1Month = Page(
   text: Text.function((pageMessage, user) async {
     var days = 30;
 
-    var responseBody = jsonDecode((await iokassaReques(
-            user.id, pageMessage.message_id, days * priceForDay, days))
-        .body);
+    var responseBody = jsonDecode(
+        (await iokassaReques(user.id, pageMessage.message_id, 700, days)).body);
 
     return 'Оплатите по сылке ${responseBody['confirmation']['confirmation_url']}';
   }),
@@ -82,9 +79,9 @@ late final payFor1Year = Page(
   text: Text.function((pageMessage, user) async {
     var days = 361;
 
-    var responseBody = jsonDecode((await iokassaReques(
-            user.id, pageMessage.message_id, days * priceForDay, days))
-        .body);
+    var responseBody = jsonDecode(
+        (await iokassaReques(user.id, pageMessage.message_id, 4000, days))
+            .body);
 
     return 'Оплатите по сылке ${responseBody['confirmation']['confirmation_url']}';
   }),
