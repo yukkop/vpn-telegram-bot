@@ -35,13 +35,13 @@ class EventController extends IController {
       var vars = description.split(';');
       var userId = vars[0];
       var days = vars[3];
+
+      var response = await http.patch(Uri.http(
+          Configurations.backendHost, "/users/$userId/addToBalance/$days"));
+
+      Loger.log('iokassa event',
+          userId: userId, body: 'balance request: $response');
     } catch (e) {}
-
-    var response = await http.patch(Uri.http(
-        Configurations.backendHost, "/users/$userId/addToBalance/$days"));
-
-    Loger.log('iokassa event',
-        userId: userId, body: 'balance request: $response');
 
     final teleDart = GetIt.I<TeleDart>();
 
