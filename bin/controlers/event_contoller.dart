@@ -20,8 +20,7 @@ class EventController extends IController {
 
   @override
   EventController addHandlers() {
-    router
-      ..post('/iokassa-paid', _iokassa)
+    router.post('/iokassa-paid', _iokassa);
     return this;
   }
 
