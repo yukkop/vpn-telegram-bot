@@ -21,7 +21,7 @@ class EventController extends IController {
   @override
   EventController addHandlers() {
     router
-      ..post('/testSubscribe', _testSubscribe)
+      ..post('/test-notify', _testSubscribe)
       ..get('/iokassa/<userId>/<messageId>/<days>', _iokassa);
     return this;
   }
@@ -32,7 +32,7 @@ class EventController extends IController {
 
     final teleDart = GetIt.I<TeleDart>();
 
-    teleDart.sendMessage(postData["User"]['id'], 'test notify');
+    teleDart.sendMessage(380055934, postData);
 
     return Response.ok('Notified');
   }
@@ -44,10 +44,6 @@ class EventController extends IController {
 
     final teleDart = GetIt.I<TeleDart>();
 
-    // var keyboard = MyGigaKeybord.list([
-    //   [MyGigaButton.openPage(text: 'Ок', key: mainMenu.getKey())]
-    // ]);
-
     teleDart.editMessageText('Успешная оплата',
         message_id: int.parse(messageId),
         chat_id: userId,
@@ -57,11 +53,6 @@ class EventController extends IController {
                 text: 'Ок', callback_data: mainMenuEdit.getKey())
           ]
         ]));
-
-    // MyGigaPage(
-    //   text: MyGigaText.string('спасибо за оплату'),
-    //   renderMethod:
-    // );
 
     var response = await http.patch(Uri.http(
         Configurations.backendHost, "/users/$userId/addToBalance/$days"));
