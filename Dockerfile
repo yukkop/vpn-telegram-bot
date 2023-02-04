@@ -19,8 +19,6 @@ COPY --from=build /runtime/ /
 COPY --from=build /app/bin/server /app/bin/
 COPY /config.yaml ./
 COPY /layouts.yaml ./
-COPY /hostname.key /app/bin/
-COPY /hostname.crt /app/bin/
 COPY /logs.log ./
 
 # Start server.
