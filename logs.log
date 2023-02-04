@@ -2980,3 +2980,18 @@ Route not found
 2023-02-02 18:32:34.059867  [Server listening on port 8085] 
 2023-02-04 06:05:56.925871  [Program starting..] 
 2023-02-04 06:05:57.001011  [Server listening on port 8085] 
+2023-02-04 06:53:19.907097  [Program starting..] 
+2023-02-04 06:53:19.994627  [Server listening on port 8085] 
+2023-02-04 06:57:10.978230  [Program starting..] 
+2023-02-04 06:57:11.042498  [Server listening on port 8085] 
+2023-02-04 06:58:24.234110  [Program starting..] 
+2023-02-04 06:58:24.307679  [Server listening on port 8085] 
+2023-02-04 06:58:27.521599 /380055934/ [iokassa event] balance request: Instance of 'Response'
+2023-02-04 06:58:59.053653  [Program starting..] 
+2023-02-04 06:58:59.118905  [Server listening on port 8085] 
+2023-02-04 06:58:59.882188 /380055934/ [/start] called
+2023-02-04 06:59:01.205830 /380055934/ [main-menu] /users status: 200
+2023-02-04 06:59:02.820408 /380055934/ [04914950-a451-11ed-8c83-311dcd5c396d] called
+2023-02-04 06:59:08.780662 /380055934/ [iokassa event] balance request: Instance of 'Response'
+2023-02-04 06:59:11.033429 /380055934/ [04908600-a451-11ed-8c83-311dcd5c396d] called
+2023-02-04 06:59:12.875439 /380055934/ [04914950-a451-11ed-8c83-311dcd5c396d] called

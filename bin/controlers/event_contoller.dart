@@ -28,20 +28,18 @@ class EventController extends IController {
 
   Future<Response> _testSubscribe(Request req) async {
     var body = await req.readAsString();
-    var data = jsonDecode(body);
+    var data = jsonDecode(body)["object"];
 
-    try {
-      String description = data["description"];
-      var vars = description.split(';');
-      var userId = vars[0];
-      var days = vars[3];
+    String description = data["description"];
+    var vars = description.split(';');
+    var userId = vars[0];
+    var days = vars[3];
 
-      var response = await http.patch(Uri.http(
-          Configurations.backendHost, "/users/$userId/addToBalance/$days"));
+    var response = await http.patch(Uri.http(
+        Configurations.backendHost, "/users/$userId/addToBalance/$days"));
 
-      Loger.log('iokassa event',
-          userId: userId, body: 'balance request: $response');
-    } catch (e) {}
+    Loger.log('iokassa event',
+        userId: userId, body: 'balance request: $response');
 
     final teleDart = GetIt.I<TeleDart>();
 
