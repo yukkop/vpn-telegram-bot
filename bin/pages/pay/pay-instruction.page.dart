@@ -28,7 +28,7 @@ Future<Response> iokassaReques(
           "capture": true,
           "confirmation": {
             "type": "redirect",
-            "return_url": "http://${Configurations.botHost}/iokassa/$userId/$messageId/$days"
+            "return_url": "https://t.me/Vpnster_bot"
           },
           "description": "$userId;$messageId;$price;$days"
         }''');
