@@ -28,6 +28,7 @@ class EventController extends IController {
 
   Future<Response> _testSubscribe(Request req) async {
     print(req.toString());
+    print(req.readAsString());
     var body = await req.readAsString();
     var postData = jsonDecode(body);
 
