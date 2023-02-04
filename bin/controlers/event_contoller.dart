@@ -30,10 +30,12 @@ class EventController extends IController {
     var body = await req.readAsString();
     var data = jsonDecode(body);
 
-    String description = data["description"];
-    var vars = description.split(';');
-    var userId = vars[0];
-    var days = vars[3];
+    try {
+      String description = data["description"];
+      var vars = description.split(';');
+      var userId = vars[0];
+      var days = vars[3];
+    } catch (e) {}
 
     var response = await http.patch(Uri.http(
         Configurations.backendHost, "/users/$userId/addToBalance/$days"));
