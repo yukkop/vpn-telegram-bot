@@ -16,13 +16,13 @@ Future<Response> iokassaReques(
     int userId, int messageId, int price, int days) async {
   var response =
       await post(Uri.https('api.yookassa.ru', "/v3/payments"), headers: {
-    'Idempotence-Key': uuid.v1().toString(),
+    'Idempotence-Key': "${uuid.v1().toString()}:$userId:$messageId",
     'Content-Type': 'application/json',
     'Authorization':
         'Basic ${base64.encode(utf8.encode('606187:test_rfWl9R66FvKB3QyzwGlid8deH9YiPcReTgv3r-KFSsA'))}'
   }, body: '''{
           "amount": {
-            "value": "100.00",
+            "value": "$price",
             "currency": "RUB"
           },
           "capture": true,
