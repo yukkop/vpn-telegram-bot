@@ -21,12 +21,11 @@ class EventController extends IController {
   @override
   EventController addHandlers() {
     router
-      ..post('/test-notify', _testSubscribe)
-      ..get('/iokassa/<userId>/<messageId>/<days>', _iokassa);
+      ..post('/iokassa-paid', _iokassa)
     return this;
   }
 
-  Future<Response> _testSubscribe(Request req) async {
+  Future<Response> _iokassa(Request req) async {
     var body = await req.readAsString();
     var data = jsonDecode(body)["object"];
 
@@ -45,30 +44,6 @@ class EventController extends IController {
 
     teleDart.sendMessage(380055934, body);
 
-    return Response.ok('Notified');
-  }
-
-  Future<Response> _iokassa(
-      Request req, String userId, String messageId, String days) async {
-    var body = await req.readAsString();
-    Loger.log('iokassa', body: 'userId: $userId');
-
-    final teleDart = GetIt.I<TeleDart>();
-
-    teleDart.editMessageText('Успешная оплата',
-        message_id: int.parse(messageId),
-        chat_id: userId,
-        reply_markup: InlineKeyboardMarkup(inline_keyboard: [
-          [
-            InlineKeyboardButton(
-                text: 'Ок', callback_data: mainMenuEdit.getKey())
-          ]
-        ]));
-
-    var response = await http.patch(Uri.http(
-        Configurations.backendHost, "/users/$userId/addToBalance/$days"));
-    Loger.log('iokassa event',
-        userId: userId, body: 'balance request: $response');
     return Response.ok('Notified');
   }
 }
