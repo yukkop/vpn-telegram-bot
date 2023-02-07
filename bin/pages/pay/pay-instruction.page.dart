@@ -19,7 +19,7 @@ Future<Response> iokassaReques(
     'Idempotence-Key': uuid.v1().toString(),
     'Content-Type': 'application/json',
     'Authorization':
-        'Basic ${base64.encode(utf8.encode('606187:test_rfWl9R66FvKB3QyzwGlid8deH9YiPcReTgv3r-KFSsA'))}'
+        'Basic ${base64.encode(utf8.encode(Configurations.iokassaToken))}'
   }, body: '''{
           "amount": {
             "value": "$price",

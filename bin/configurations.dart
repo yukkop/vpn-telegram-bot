@@ -6,4 +6,5 @@ class Configurations {
       '${lib_config.Configurations.config['backend']['host']}:${lib_config.Configurations.config['backend']['port']}';
   static final botHost =
       '${lib_config.Configurations.config['bot']['host']}:${lib_config.Configurations.config['bot']['port']}';
+  static final iokassaToken = '${lib_config.Configurations.config['iokassa']}';
 }

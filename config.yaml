@@ -1,8 +1,6 @@
-﻿botToken: '5965008171:AAGsp9wshkkBz6pHAZp7EUcRHepIbSJ1mdQ'
+﻿botToken: '1456257916:AAFXlGP9xZgWEwZzkgtTr03a9M4vZPZ-r2I'
 layoutsPath: 'layouts.yaml'
+iokassaToken: '606187:test_rfWl9R66FvKB3QyzwGlid8deH9YiPcReTgv3r-KFSsA'
 backend:
-  host: '185.41.160.153'
+  host: 'localhost'
   port: '8083'
-bot:
-  host: '88.85.81.81'
-  port: '8085'
