@@ -67,6 +67,7 @@ void testPeriodChoiceRegionKeyboard() {
       cortejAtvechau.add('Германия 🇩🇪');
       cortejAtvechau.add(changeRegionGermany.getKey());
     }
+    // else nothink
     return null;
   }
 

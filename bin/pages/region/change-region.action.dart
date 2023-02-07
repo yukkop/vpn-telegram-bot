@@ -16,6 +16,15 @@ void changeRegion(region, teleDart, message, user, text, markup) async {
   // send instruction
   await instruction.render(message, user);
 
+  // /users/<userId>/changeRegion
+  // await patch(
+  //     Uri.http(Configurations.backendHost, "/users/${user.id}/changeRegion"),
+  //     body: jsonEncode({
+  //       "telegramId": user.id.toString(),
+  //       "username": user.username,
+  //       "regionId": '4f4abb0b-063b-4a91-b944-acfbf68c3a1b'
+  //     }));
+
   Response response;
 
   //check balance TODO
