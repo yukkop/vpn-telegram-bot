@@ -26,6 +26,22 @@ final regionChoiceReplace = Page(
   },
 );
 
+List<String>? regionStaff(String regionName) {
+  List<String> cortejAtvechau = List.empty();
+  if (regionName == 'russia') {
+    cortejAtvechau.add('Русский 🇷🇺');
+    cortejAtvechau.add(changeRegionRussia.getKey());
+  } else if (regionName == 'netherlands') {
+    cortejAtvechau.add('Нидерланды 🇳🇱');
+    cortejAtvechau.add(changeRegionNetherlands.getKey());
+  } else if (regionName == 'germany') {
+    cortejAtvechau.add('Германия 🇩🇪');
+    cortejAtvechau.add(changeRegionGermany.getKey());
+  }
+  // else nothink
+  return null;
+}
+
 void testPeriodChoiceRegionKeyboard() {
   var keyboard = Keyboard.function((pageMessage, user) async {
     var response = await get(Uri.http(Configurations.backendHost, "/regions"));
@@ -33,15 +49,9 @@ void testPeriodChoiceRegionKeyboard() {
     var responseBody = jsonDecode(response.body);
     List<List<Button>> arr = [];
     for (var i in responseBody) {
-      arr.add([
-        Button.openPage(
-            text: (i['regionName'] == 'russia'
-                ? 'Русский 🇷🇺'
-                : 'Германия 🇩🇪'),
-            key: (i['regionName'] == 'russia'
-                ? changeRegionRussia.getKey()
-                : changeRegionGermany.getKey()))
-      ]);
+      var region = regionStaff(i['regionName']) ?? List<String>.filled(2, "");
+
+      arr.add([Button.openPage(text: region[0], key: region[1])]);
     }
     arr.add([
       Button.openPage(
@@ -54,22 +64,6 @@ void testPeriodChoiceRegionKeyboard() {
 
     return arr;
   });
-
-  List<String>? regionStaff(String regionName) {
-    List<String> cortejAtvechau = List.empty();
-    if (regionName == 'russia') {
-      cortejAtvechau.add('Русский 🇷🇺');
-      cortejAtvechau.add(changeRegionRussia.getKey());
-    } else if (regionName == 'netherlands') {
-      cortejAtvechau.add('Нидерланды 🇳🇱');
-      cortejAtvechau.add(changeRegionNetherlands.getKey());
-    } else if (regionName == 'germany') {
-      cortejAtvechau.add('Германия 🇩🇪');
-      cortejAtvechau.add(changeRegionGermany.getKey());
-    }
-    // else nothink
-    return null;
-  }
 
   regionChoiceEdit.changeKeyboard(keyboard);
   regionChoiceReplace.changeKeyboard(keyboard);

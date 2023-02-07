@@ -11,21 +11,25 @@ import '../main.page.dart';
 import 'instruction.message.dart';
 
 // Недостаток самописной утилиты, оборачиваю множество действий под пустую страницу, хотя это не требуеться
-void changeRegion(region, teleDart, message, user, text, markup) async {
+void changeRegion(
+    String regionName, teleDart, message, user, text, markup) async {
   await teleDart.deleteMessage(message.chat.id, message.message_id);
   // send instruction
   await instruction.render(message, user);
+  Response response;
 
   // /users/<userId>/changeRegion
-  // await patch(
-  //     Uri.http(Configurations.backendHost, "/users/${user.id}/changeRegion"),
-  //     body: jsonEncode({
-  //       "telegramId": user.id.toString(),
-  //       "username": user.username,
-  //       "regionId": '4f4abb0b-063b-4a91-b944-acfbf68c3a1b'
-  //     }));
+  response = await get(
+    Uri.http(Configurations.backendHost, "/regions"),
+  );
 
-  Response response;
+  List<dynamic> responseBody = jsonDecode(response.body);
+  final regionId = responseBody
+      .firstWhere((element) => element['regionName'] == regionName)['id'];
+
+  await patch(
+      Uri.http(Configurations.backendHost, "/users/${user.id}/changeRegion"),
+      body: jsonEncode({"regionId": regionId}));
 
   //check balance TODO
 
