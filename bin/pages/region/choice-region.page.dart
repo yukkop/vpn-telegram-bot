@@ -27,16 +27,15 @@ final regionChoiceReplace = Page(
 );
 
 List<String>? regionStaff(String regionName) {
-  List<String> cortejAtvechau = List.empty();
+  List<String> cortejAtvechau = List.filled(2, "");
   if (regionName == 'russia') {
-    cortejAtvechau.add('Русский 🇷🇺');
-    cortejAtvechau.add(changeRegionRussia.getKey());
+    cortejAtvechau[0] = 'Русский 🇷🇺';
+    cortejAtvechau[1] = changeRegionRussia.getKey();
+    return cortejAtvechau;
   } else if (regionName == 'netherlands') {
-    cortejAtvechau.add('Нидерланды 🇳🇱');
-    cortejAtvechau.add(changeRegionNetherlands.getKey());
-  } else if (regionName == 'germany') {
-    cortejAtvechau.add('Германия 🇩🇪');
-    cortejAtvechau.add(changeRegionGermany.getKey());
+    cortejAtvechau[0] = 'Нидерланды 🇳🇱';
+    cortejAtvechau[1] = changeRegionNetherlands.getKey();
+    return cortejAtvechau;
   }
   // else nothink
   return null;
@@ -49,7 +48,8 @@ void testPeriodChoiceRegionKeyboard() {
     var responseBody = jsonDecode(response.body);
     List<List<Button>> arr = [];
     for (var i in responseBody) {
-      var region = regionStaff(i['regionName']) ?? List<String>.filled(2, "");
+      var region =
+          regionStaff(i['regionName']) ?? List<String>.filled(2, "empty");
 
       arr.add([Button.openPage(text: region[0], key: region[1])]);
     }
