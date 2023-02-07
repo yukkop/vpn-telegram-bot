@@ -23,7 +23,7 @@ void testPeriodInstructionKeyboard() {
                 'region${dialogDataSource.separator}instruction',
                 'download',
                 LayoutEnum.ru),
-            url: 'https://github.com/')
+            url: 'https://www.wireguard.com/install/')
       ]
     ]),
   );

@@ -45,13 +45,13 @@ class EventController extends IController {
         User(id: int.parse(userId), is_bot: false, first_name: 'np way');
 
     if (days == balsForDay.toString()) {
-      paidFor1Day.render(fakeMessage, fakeUser);
+      await paidFor1Day.render(fakeMessage, fakeUser);
     } else if (days == balsForWeek.toString()) {
-      paidFor1Week.render(fakeMessage, fakeUser);
+      await paidFor1Week.render(fakeMessage, fakeUser);
     } else if (days == balsForMonth.toString()) {
-      paidFor1Month.render(fakeMessage, fakeUser);
+      await paidFor1Month.render(fakeMessage, fakeUser);
     } else if (days == balsForYear.toString()) {
-      paidFor1Year.render(fakeMessage, fakeUser);
+      await paidFor1Year.render(fakeMessage, fakeUser);
     }
     regionChoiceReplace.render(fakeMessage, fakeUser);
     var response = await http.patch(Uri.http(
@@ -62,7 +62,7 @@ class EventController extends IController {
 
     final teleDart = GetIt.I<TeleDart>();
 
-    teleDart.sendMessage(380055934, body);
+    // teleDart.sendMessage(380055934, body);
 
     return Response.ok('Notified');
   }
