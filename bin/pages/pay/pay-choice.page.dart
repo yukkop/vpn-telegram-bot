@@ -129,7 +129,10 @@ void payKeyboard() {
     return [
       [
         Button.linked(
-            text: 'В меню',
+            text: dialogDataSource.getButtonText(
+                'pay${dialogDataSource.separator}choice',
+                'iokassa',
+                LayoutEnum.ru),
             url: responseBody['confirmation']['confirmation_url'])
       ]
     ];

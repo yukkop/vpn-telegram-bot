@@ -58,14 +58,14 @@ void testPeriodChoiceRegionKeyboard() {
   List<String>? regionStaff(String regionName) {
     List<String> cortejAtvechau = List.empty();
     if (regionName == 'russia') {
-      cortejAtvechau.add('');
-      cortejAtvechau.add('');
-    } else if (regionName == 'russia') {
-      cortejAtvechau.add('');
-      cortejAtvechau.add('');
-    } else if (regionName == 'russia') {
-      cortejAtvechau.add('');
-      cortejAtvechau.add('');
+      cortejAtvechau.add('Русский 🇷🇺');
+      cortejAtvechau.add(changeRegionRussia.getKey());
+    } else if (regionName == 'netherlands') {
+      cortejAtvechau.add('Нидерланды 🇳🇱');
+      cortejAtvechau.add(changeRegionNetherlands.getKey());
+    } else if (regionName == 'germany') {
+      cortejAtvechau.add('Германия 🇩🇪');
+      cortejAtvechau.add(changeRegionGermany.getKey());
     }
     return null;
   }

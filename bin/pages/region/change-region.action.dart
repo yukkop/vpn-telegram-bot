@@ -70,3 +70,11 @@ final changeRegionGermany = Page(
     changeRegion('germany', teleDart, message, user, text, markup);
   },
 );
+
+final changeRegionNetherlands = Page(
+  name: 'no page',
+  text: Text.string(''),
+  renderMethod: (teleDart, message, user, text, markup) async {
+    changeRegion('netherlands', teleDart, message, user, text, markup);
+  },
+);

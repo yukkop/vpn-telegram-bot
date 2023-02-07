@@ -31,17 +31,20 @@
     message: '*Тарифный план:*'
     buttons:
       choice: '% - % руб'
-      back: 'Назад'
+      back: '<< Назад'
   region:
     choice-region:
       message: 'Какой сервер Вы желаете выбрать?'
       buttons:
-        back: 'Назад'
+        back: '<< Назад'
     instruction:
       message: 'Инструкция по подключению к VPNster
+  
 
 Шаг 1. Скачайте WireGuard;
+
 Шаг 2. Отсканируйте QR код или загрузите файл с конфигурацией из бота в ваш WireGuard;
+
 Шаг 3. Наслаждайтесь вашим VPNster.'
       buttons:
         download: 'Скачать WireGuard'
