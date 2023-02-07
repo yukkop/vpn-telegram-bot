@@ -16,10 +16,9 @@ void changeRegion(region, teleDart, message, user, text, markup) async {
   // send instruction
   await instruction.render(message, user);
 
-  //check balance TODO
+  Response response;
 
-  var response = await patch(
-      Uri.http(Configurations.backendHost, "/users/${user.id}/useFreePeriod"));
+  //check balance TODO
 
   //try send qr
   try {

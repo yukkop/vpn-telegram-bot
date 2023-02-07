@@ -12,15 +12,13 @@ import '../../configurations.dart';
 import '../../variables.dart';
 import '../main.page.dart';
 
-var priceForDay = 10;
-
 final paidFor1Day = Page(
   name: 'Страница оплаты на 1 день',
   text: Text.function((pageMessage, user) async {
     return dialogDataSource.getMessage(
         'pay${dialogDataSource.separator}gratitude', LayoutEnum.ru);
   }),
-  renderMethod: Page.edit,
+  renderMethod: Page.send,
 );
 
 final paidFor1Week = Page(
@@ -29,7 +27,7 @@ final paidFor1Week = Page(
     return dialogDataSource.getMessage(
         'pay${dialogDataSource.separator}gratitude', LayoutEnum.ru);
   }),
-  renderMethod: Page.edit,
+  renderMethod: Page.send,
 );
 
 final paidFor1Month = Page(
@@ -38,15 +36,15 @@ final paidFor1Month = Page(
     return dialogDataSource.getMessage(
         'pay${dialogDataSource.separator}gratitude', LayoutEnum.ru);
   }),
-  renderMethod: Page.edit,
+  renderMethod: Page.send,
 );
 
-late final paidFor1Year = Page(
+final paidFor1Year = Page(
   name: 'Страница оплаты на 1 год',
   text: Text.function((pageMessage, user) async {
     return dialogDataSource.getMessage(
         'pay${dialogDataSource.separator}gratitude', LayoutEnum.ru);
     ;
   }),
-  renderMethod: Page.edit,
+  renderMethod: Page.send,
 );

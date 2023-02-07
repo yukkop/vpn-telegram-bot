@@ -13,6 +13,9 @@ import 'package:vpn_telegram_bot/page-giga-mega-trash/text.hectic-tg.dart';
 import '../configurations.dart';
 
 import '../pages/main.page.dart';
+import '../pages/pay/gratitude-pay.message.dart';
+import '../pages/pay/pay.const.dart';
+import '../pages/region/choice-region.page.dart';
 import 'controller_interface.dart';
 
 class EventController extends IController {
@@ -31,8 +34,26 @@ class EventController extends IController {
     String description = data["description"];
     var vars = description.split(';');
     var userId = vars[0];
+    var messageId = vars[0];
     var days = vars[3];
 
+    var fakeMessage = Message(
+        message_id: int.parse(messageId),
+        date: 0,
+        chat: Chat(id: int.parse(userId), type: 'private'));
+    var fakeUser =
+        User(id: int.parse(userId), is_bot: false, first_name: 'np way');
+
+    if (days == balsForDay.toString()) {
+      paidFor1Day.render(fakeMessage, fakeUser);
+    } else if (days == balsForWeek.toString()) {
+      paidFor1Week.render(fakeMessage, fakeUser);
+    } else if (days == balsForMonth.toString()) {
+      paidFor1Month.render(fakeMessage, fakeUser);
+    } else if (days == balsForYear.toString()) {
+      paidFor1Year.render(fakeMessage, fakeUser);
+    }
+    regionChoiceReplace.render(fakeMessage, fakeUser);
     var response = await http.patch(Uri.http(
         Configurations.backendHost, "/users/$userId/addToBalance/$days"));
 
