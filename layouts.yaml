@@ -22,13 +22,15 @@
 
 После оплаты я пришлю вам инструкцию по подключению.'
       buttons:
+        iokassa: 'Оплатить через Юкассу'
     gratitude:
-      message: '*Тарифный план:*'
-      buttons:
+      message: Благодарим за оплату на % - % руб!
+
+Вы оформили подписку на VPNster!''
   rate:
     message: '*Тарифный план:*'
     buttons:
-      rate: '% - % руб'
+      choice: '% - % руб'
       back: 'Назад'
   region:
     choice-region:

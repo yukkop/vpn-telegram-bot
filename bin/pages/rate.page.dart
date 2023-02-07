@@ -6,7 +6,7 @@ import 'package:vpn_telegram_bot/page-giga-mega-trash/text.hectic-tg.dart';
 
 import '../variables.dart';
 import 'main.page.dart';
-import 'pay/pay-instruction.page.dart';
+import 'pay/pay-choice.page.dart';
 
 late final rate = Page(
   text: Text.function((pageMessage, user) async {
