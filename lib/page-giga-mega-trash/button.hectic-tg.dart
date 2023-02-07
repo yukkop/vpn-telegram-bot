@@ -3,6 +3,7 @@ import 'package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart';
 
 class Button {
   final String text;
+  String? url;
   late final String callbackData;
 
   Button.openPage({required this.text, required String key}) {
@@ -13,7 +14,13 @@ class Button {
     callbackData = '';
   }
 
+  Button.linked({required this.text, required this.url});
+
   InlineKeyboardButton convertToTeegram() {
-    return InlineKeyboardButton(text: text, callback_data: callbackData);
+    if (url == null) {
+      return InlineKeyboardButton(text: text, callback_data: callbackData);
+    } else {
+      return InlineKeyboardButton(text: text, url: url);
+    }
   }
 }

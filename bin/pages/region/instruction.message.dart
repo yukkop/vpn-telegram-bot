@@ -18,12 +18,12 @@ void testPeriodInstructionKeyboard() {
   instruction.changeKeyboard(
     Keyboard.list([
       [
-        Button.openPage(
+        Button.linked(
             text: dialogDataSource.getButtonText(
                 'region${dialogDataSource.separator}instruction',
                 'download',
                 LayoutEnum.ru),
-            key: 'fsgdh')
+            url: 'https://github.com/')
       ]
     ]),
   );
