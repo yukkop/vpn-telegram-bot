@@ -34,7 +34,7 @@ class EventController extends IController {
     String description = data["description"];
     var vars = description.split(';');
     var userId = vars[0];
-    var messageId = vars[0];
+    var messageId = vars[1];
     var days = vars[3];
 
     var fakeMessage = Message(
