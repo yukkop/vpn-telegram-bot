@@ -54,6 +54,22 @@ void testPeriodChoiceRegionKeyboard() {
 
     return arr;
   });
+
+  List<String>? regionStaff(String regionName) {
+    List<String> cortejAtvechau = List.empty();
+    if (regionName == 'russia') {
+      cortejAtvechau.add('');
+      cortejAtvechau.add('');
+    } else if (regionName == 'russia') {
+      cortejAtvechau.add('');
+      cortejAtvechau.add('');
+    } else if (regionName == 'russia') {
+      cortejAtvechau.add('');
+      cortejAtvechau.add('');
+    }
+    return null;
+  }
+
   regionChoiceEdit.changeKeyboard(keyboard);
   regionChoiceReplace.changeKeyboard(keyboard);
 }
