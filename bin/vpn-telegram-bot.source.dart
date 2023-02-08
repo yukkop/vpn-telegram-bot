@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:get_it/get_it.dart';
 import 'package:shelf/shelf.dart';
 import 'package:shelf/shelf_io.dart';
+import 'package:shelf_cors_headers/shelf_cors_headers.dart';
 import 'package:shelf_router/shelf_router.dart';
 import 'package:teledart/teledart.dart';
 import 'package:teledart/telegram.dart';
@@ -12,6 +13,7 @@ import 'package:vpn_telegram_bot/data/yaml-dialog.data-source.dart';
 import 'package:vpn_telegram_bot/loger.dart';
 import 'package:vpn_telegram_bot/page-giga-mega-trash/registrator.hectic-tg.dart';
 
+import 'maxim-stuff/dkn_controller.dart';
 import 'configurations.dart';
 import 'controlers/event_contoller.dart';
 import 'pages/dash-board.page.dart';
@@ -25,15 +27,25 @@ import 'package:shelf_proxy/shelf_proxy.dart';
 import 'pages/region/instruction.message.dart';
 import 'package:shelf_letsencrypt/shelf_letsencrypt.dart';
 
+final overrideHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE',
+  "Access-Control-Allow-Headers": "X-Requested-With",
+};
+
 Future<void> main() async {
   Loger.log('Program starting..');
 
   final router = Router();
   EventController(router: router).addHandlers();
+  DknController(router: router).addHandlers();
 
   final ip = InternetAddress.anyIPv4;
   // Configure a pipeline that logs requests.
-  final handler = Pipeline().addMiddleware(logRequests()).addHandler(router);
+  final handler = Pipeline()
+      .addMiddleware(logRequests())
+      .addMiddleware(corsHeaders(headers: overrideHeaders))
+      .addHandler(router);
 
   // For running in containers, we respect the PORT environment variable.
   final port = int.parse(Platform.environment['PORT'] ?? '8085');
