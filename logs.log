@@ -303,3 +303,564 @@
 2023-02-07 16:41:51.256366 /380055934/ [d60daab0-a6fd-11ed-bc05-c9e24d21395f] called
 2023-02-07 16:41:53.010933 /380055934/ [d60d83a1-a6fd-11ed-bc05-c9e24d21395f] called
 2023-02-07 16:41:54.256689 /380055934/ [da462440-a6fd-11ed-bc05-c9e24d21395f] called
+2023-02-08 10:09:12.456145  [Program starting..] 
+2023-02-08 10:09:12.531682  [Server listening on port 8085] 
+2023-02-08 10:10:14.398333  [Program starting..] 
+2023-02-08 10:10:14.463206  [Server listening on port 8085] 
+2023-02-08 10:13:40.061228 /380055934/ [/start] called
+2023-02-08 10:13:41.438175 /380055934/ [main-menu] /users status: 500
+2023-02-08 10:13:43.007557 /380055934/ [660d72c1-a790-11ed-aa2e-6d1f3cbf2a32] called
+2023-02-08 10:13:44.325430 /380055934/ [660d72c0-a790-11ed-aa2e-6d1f3cbf2a32] called
+2023-02-08 10:13:45.694649 /380055934/ [660caf71-a790-11ed-aa2e-6d1f3cbf2a32] called
+2023-02-08 10:13:47.102087 /380055934/ [660cd680-a790-11ed-aa2e-6d1f3cbf2a32] called
+2023-02-08 10:13:48.159389 /380055934/ [660caf71-a790-11ed-aa2e-6d1f3cbf2a32] called
+2023-02-08 10:14:06.748799 /380055934/ [660cd680-a790-11ed-aa2e-6d1f3cbf2a32] called
+2023-02-08 10:14:07.846272 /380055934/ [660caf71-a790-11ed-aa2e-6d1f3cbf2a32] called
+2023-02-08 10:14:09.569096 /380055934/ [f127a5b0-a790-11ed-aa2e-6d1f3cbf2a32] called
+2023-02-08 10:14:14.765347 /380055934/ [e32a68d0-a790-11ed-aa2e-6d1f3cbf2a32] called
+2023-02-08 10:14:16.054165 /380055934/ [TestPeriodactivate] HttpClientException: 400 Bad Request: IMAGE_PROCESS_FAILED
+
+2023-02-08 10:14:16.271306 /380055934/ [TestPeriodactivate] type 'Null' is not a subtype of type 'String'
+#0      changeRegion (file:///home/yukkop/Projects/gwp/vpn-system/vpn-telegram-bot/bin/pages/region/change-region.action.dart:60:28)
+<asynchronous suspension>
+
+2023-02-08 10:14:21.616150 /380055934/ [/start] called
+2023-02-08 10:14:22.224505 /380055934/ [main-menu] /users status: 200
+2023-02-08 10:14:23.291486 /380055934/ [f127a5b0-a790-11ed-aa2e-6d1f3cbf2a32] called
+2023-02-08 10:31:16.823576 /380055934/ [e32a41c0-a790-11ed-aa2e-6d1f3cbf2a32] called
+2023-02-08 10:31:18.382800 /380055934/ [TestPeriodactivate] HttpClientException: 400 Bad Request: IMAGE_PROCESS_FAILED
+
+2023-02-08 10:31:18.646794 /380055934/ [TestPeriodactivate] type 'Null' is not a subtype of type 'String'
+#0      changeRegion (file:///home/yukkop/Projects/gwp/vpn-system/vpn-telegram-bot/bin/pages/region/change-region.action.dart:60:28)
+<asynchronous suspension>
+
+2023-02-08 10:31:25.418887 /380055934/ [/start] called
+2023-02-08 10:31:26.003699 /380055934/ [main-menu] /users status: 200
+2023-02-08 10:31:37.620751 /380055934/ [/start] called
+2023-02-08 10:31:38.217352 /380055934/ [main-menu] /users status: 200
+2023-02-08 10:31:39.900488 /380055934/ [f127a5b0-a790-11ed-aa2e-6d1f3cbf2a32] called
+2023-02-08 10:31:45.744210 /380055934/ [e32a41c0-a790-11ed-aa2e-6d1f3cbf2a32] called
+2023-02-08 10:31:47.051505 /380055934/ [TestPeriodactivate] HttpClientException: 400 Bad Request: IMAGE_PROCESS_FAILED
+
+2023-02-08 10:31:47.276905 /380055934/ [TestPeriodactivate] type 'Null' is not a subtype of type 'String'
+#0      changeRegion (file:///home/yukkop/Projects/gwp/vpn-system/vpn-telegram-bot/bin/pages/region/change-region.action.dart:60:28)
+<asynchronous suspension>
+
+2023-02-08 10:33:37.017264 /380055934/ [660d72c1-a790-11ed-aa2e-6d1f3cbf2a32] called
+2023-02-08 10:33:38.399414 /380055934/ [660d72c0-a790-11ed-aa2e-6d1f3cbf2a32] called
+2023-02-08 10:33:39.521368 /380055934/ [e32a68d0-a790-11ed-aa2e-6d1f3cbf2a32] called
+2023-02-08 10:34:20.571435 /380055934/ [TestPeriodactivate] HttpClientException: 400 Bad Request: IMAGE_PROCESS_FAILED
+
+2023-02-08 10:34:28.240609  [Program starting..] 
+2023-02-08 10:34:28.302415  [Server listening on port 8085] 
+2023-02-08 10:34:28.731033 /380055934/ [/start] called
+2023-02-08 10:34:29.353444 /380055934/ [main-menu] /users status: 200
+2023-02-08 10:34:30.748461 /380055934/ [c89ac251-a793-11ed-a789-39324f5fe5e0] called
+2023-02-08 10:34:35.156049 /380055934/ [c89a4d20-a793-11ed-a789-39324f5fe5e0] called
+2023-02-08 10:34:39.230086 /380055934/ [c89ac251-a793-11ed-a789-39324f5fe5e0] called
+2023-02-08 10:34:40.302705 /380055934/ [c89ac250-a793-11ed-a789-39324f5fe5e0] called
+2023-02-08 10:34:41.458456 /380055934/ [cfc32fe0-a793-11ed-a789-39324f5fe5e0] called
+2023-02-08 10:34:44.846975 /380055934/ [TestPeriodactivate] HttpClientException: 400 Bad Request: IMAGE_PROCESS_FAILED
+
+2023-02-08 10:34:45.077948 /380055934/ [TestPeriodactivate] type 'Null' is not a subtype of type 'String'
+#0      changeRegion (file:///home/yukkop/Projects/gwp/vpn-system/vpn-telegram-bot/bin/pages/region/change-region.action.dart:60:28)
+<asynchronous suspension>
+
+2023-02-08 10:39:21.964808 /380055934/ [c89ac251-a793-11ed-a789-39324f5fe5e0] called
+2023-02-08 10:39:24.592582 /380055934/ [c89a4d20-a793-11ed-a789-39324f5fe5e0] called
+2023-02-08 10:39:25.625728 /380055934/ [c89ac251-a793-11ed-a789-39324f5fe5e0] called
+2023-02-08 10:39:29.944650 /380055934/ [c89a4d20-a793-11ed-a789-39324f5fe5e0] called
+2023-02-08 10:39:36.737727  [Program starting..] 
+2023-02-08 10:39:36.831314  [Server listening on port 8085] 
+2023-02-08 10:39:40.066006 /380055934/ [8087b850-a794-11ed-8b63-e57543794bec] called
+2023-02-08 10:39:40.075773  [Error] Connection refused
+#0      IOClient.send (package:http/src/io_client.dart:88:7)
+<asynchronous suspension>
+#1      BaseClient._sendUnstreamed (package:http/src/base_client.dart:93:32)
+<asynchronous suspension>
+#2      _withClient (package:http/http.dart:164:12)
+<asynchronous suspension>
+#3      mainMenuKeyboard.<anonymous closure> (file:///home/yukkop/Projects/gwp/vpn-system/vpn-telegram-bot/bin/pages/main.page.dart:83:7)
+<asynchronous suspension>
+#4      new Keyboard.function.<anonymous closure> (package:vpn_telegram_bot/page-giga-mega-trash/keyboard.hectic-tg.dart:19:29)
+<asynchronous suspension>
+#5      Page._render (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:105:38)
+<asynchronous suspension>
+#6      Page._constructRender.<anonymous closure> (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:70:7)
+<asynchronous suspension>
+
+2023-02-08 10:39:55.225557 /380055934/ [8087b850-a794-11ed-8b63-e57543794bec] called
+2023-02-08 10:39:58.152247 /380055934/ [80882d81-a794-11ed-8b63-e57543794bec] called
+2023-02-08 10:39:59.688462 /380055934/ [80882d80-a794-11ed-8b63-e57543794bec] called
+2023-02-08 10:40:01.147665 /380055934/ [8dfc3d30-a794-11ed-8b63-e57543794bec] called
+2023-02-08 10:45:50.194587  [Program starting..] 
+2023-02-08 10:45:50.274420  [Server listening on port 8085] 
+2023-02-08 10:45:58.208690 /380055934/ [/start] called
+2023-02-08 10:45:58.416917 /380055934/ [main-menu] /users status: 200
+2023-02-08 10:45:59.875771 /380055934/ [5f1cebd1-a795-11ed-aa9a-61a22a00b0f3] called
+2023-02-08 10:46:00.852136 /380055934/ [5f1cebd0-a795-11ed-aa9a-61a22a00b0f3] called
+2023-02-08 10:46:01.819940 /380055934/ [6542b670-a795-11ed-aa9a-61a22a00b0f3] called
+2023-02-08 10:46:02.432861 /380055934/ [TestPeriodactivate] HttpClientException: 400 Bad Request: IMAGE_PROCESS_FAILED
+
+2023-02-08 10:46:02.440936 /380055934/ [TestPeriodactivate] type 'Null' is not a subtype of type 'String'
+#0      changeRegion (file:///home/yukkop/Projects/gwp/vpn-system/vpn-telegram-bot/bin/pages/region/change-region.action.dart:60:28)
+<asynchronous suspension>
+
+2023-02-08 10:47:08.010438  [Program starting..] 
+2023-02-08 10:47:08.088782  [Server listening on port 8085] 
+2023-02-08 10:47:08.970115 /380055934/ [/start] called
+2023-02-08 10:47:09.437215 /380055934/ [main-menu] /users status: 200
+2023-02-08 10:47:10.886630 /380055934/ [8d7b09d1-a795-11ed-9a23-63ffd8a6ff89] called
+2023-02-08 10:47:11.816859 /380055934/ [8d7b09d0-a795-11ed-9a23-63ffd8a6ff89] called
+2023-02-08 10:47:13.611388 /380055934/ [8f8c3691-a795-11ed-9a23-63ffd8a6ff89] called
+2023-02-08 10:48:06.014651  [Program starting..] 
+2023-02-08 10:48:06.090463  [Server listening on port 8085] 
+2023-02-08 10:48:10.268466 /380055934/ [b00e0d30-a795-11ed-a4c6-45076cd4b9db] called
+2023-02-08 10:48:11.110135 /380055934/ [b00e8260-a795-11ed-a4c6-45076cd4b9db] called
+2023-02-08 10:48:12.037650 /380055934/ [b00e5b51-a795-11ed-a4c6-45076cd4b9db] called
+2023-02-08 10:48:13.675050 /380055934/ [b37246d0-a795-11ed-a4c6-45076cd4b9db] called
+2023-02-08 10:48:45.757227 /380055934/ [b00e8260-a795-11ed-a4c6-45076cd4b9db] called
+2023-02-08 10:48:47.272450 /380055934/ [b00e5b51-a795-11ed-a4c6-45076cd4b9db] called
+2023-02-08 10:48:48.641885 /380055934/ [b3721fc0-a795-11ed-a4c6-45076cd4b9db] called
+2023-02-08 10:48:55.724736 /380055934/ [b00e8260-a795-11ed-a4c6-45076cd4b9db] called
+2023-02-08 10:48:57.097970 /380055934/ [b00e5b51-a795-11ed-a4c6-45076cd4b9db] called
+2023-02-08 10:48:57.977640 /380055934/ [b37246d0-a795-11ed-a4c6-45076cd4b9db] called
+2023-02-08 10:51:41.726105  [Program starting..] 
+2023-02-08 10:51:41.799061  [Server listening on port 8085] 
+2023-02-08 10:51:45.900127 /380055934/ [309ea630-a796-11ed-9616-e1e82e3d57ee] called
+2023-02-08 10:51:46.764454 /380055934/ [309ef452-a796-11ed-9616-e1e82e3d57ee] called
+2023-02-08 10:51:47.768549 /380055934/ [309ef451-a796-11ed-9616-e1e82e3d57ee] called
+2023-02-08 10:51:48.919803 /380055934/ [34080ff0-a796-11ed-9616-e1e82e3d57ee] called
+2023-02-08 10:53:42.004995  [Program starting..] 
+2023-02-08 10:53:42.079863  [Server listening on port 8085] 
+2023-02-08 10:53:50.018776 /380055934/ [7852d1e0-a796-11ed-b252-39d5d0f4ccc9] called
+2023-02-08 10:53:50.849506 /380055934/ [78534710-a796-11ed-b252-39d5d0f4ccc9] called
+2023-02-08 10:53:52.328749 /380055934/ [78532000-a796-11ed-b252-39d5d0f4ccc9] called
+2023-02-08 10:53:53.328790 /380055934/ [7e450961-a796-11ed-b252-39d5d0f4ccc9] called
+2023-02-08 10:55:22.692507  [Program starting..] 
+2023-02-08 10:55:22.770448  [Server listening on port 8085] 
+2023-02-08 10:55:24.370696 /380055934/ [b45907e0-a796-11ed-bae2-cdac7085140c] called
+2023-02-08 10:55:25.247810 /380055934/ [b4597d10-a796-11ed-bae2-cdac7085140c] called
+2023-02-08 10:55:26.159588 /380055934/ [b4595601-a796-11ed-bae2-cdac7085140c] called
+2023-02-08 10:55:27.604658 /380055934/ [b6331f10-a796-11ed-bae2-cdac7085140c] called
+2023-02-08 10:55:38.256719 /380055934/ [b4597d10-a796-11ed-bae2-cdac7085140c] called
+2023-02-08 10:55:39.314024 /380055934/ [b4595601-a796-11ed-bae2-cdac7085140c] called
+2023-02-08 10:55:40.317683 /380055934/ [b632f800-a796-11ed-bae2-cdac7085140c] called
+2023-02-08 10:57:12.107859  [Program starting..] 
+2023-02-08 10:57:12.185024  [Server listening on port 8085] 
+2023-02-08 11:07:00.724819 /380055934/ [f58ec1a0-a796-11ed-b1c5-bbbc99d2317d] called
+2023-02-08 11:07:01.666004 /380055934/ [f58f5de0-a796-11ed-b1c5-bbbc99d2317d] called
+2023-02-08 11:07:02.908565 /380055934/ [f58f36d1-a796-11ed-b1c5-bbbc99d2317d] called
+2023-02-08 11:07:04.204386 /380055934/ [557e6dd0-a798-11ed-b1c5-bbbc99d2317d] called
+2023-02-08 11:10:05.786469 /380055934/ [f58f5de0-a796-11ed-b1c5-bbbc99d2317d] called
+2023-02-08 11:10:06.762012 /380055934/ [f58f36d1-a796-11ed-b1c5-bbbc99d2317d] called
+2023-02-08 11:10:07.695904 /380055934/ [557e46c0-a798-11ed-b1c5-bbbc99d2317d] called
+2023-02-08 11:15:08.677962 /380055934/ [f58f5de0-a796-11ed-b1c5-bbbc99d2317d] called
+2023-02-08 11:15:09.878200 /380055934/ [f58f36d1-a796-11ed-b1c5-bbbc99d2317d] called
+2023-02-08 11:15:11.003431 /380055934/ [557e6dd0-a798-11ed-b1c5-bbbc99d2317d] called
+2023-02-08 11:15:11.662177 /380055934/ [TestPeriodactivate] HttpClientException: 400 Bad Request: IMAGE_PROCESS_FAILED
+
+2023-02-08 11:15:16.252991 /380055934/ [f58f5de0-a796-11ed-b1c5-bbbc99d2317d] called
+2023-02-08 11:15:17.275670 /380055934/ [f58f36d0-a796-11ed-b1c5-bbbc99d2317d] called
+2023-02-08 11:15:18.202153 /380055934/ [f58ec1a0-a796-11ed-b1c5-bbbc99d2317d] called
+2023-02-08 11:15:19.078058 /380055934/ [f58f5de0-a796-11ed-b1c5-bbbc99d2317d] called
+2023-02-08 11:15:22.560196 /380055934/ [f58ec1a0-a796-11ed-b1c5-bbbc99d2317d] called
+2023-02-08 11:15:23.786450 /380055934/ [f58f5de0-a796-11ed-b1c5-bbbc99d2317d] called
+2023-02-08 11:15:24.614660 /380055934/ [f58f36d1-a796-11ed-b1c5-bbbc99d2317d] called
+2023-02-08 11:15:25.930656 /380055934/ [557e46c0-a798-11ed-b1c5-bbbc99d2317d] called
+2023-02-08 11:15:26.534565 /380055934/ [TestPeriodactivate] HttpClientException: 400 Bad Request: IMAGE_PROCESS_FAILED
+
+2023-02-08 11:16:04.577248 /380055934/ [f58f5de0-a796-11ed-b1c5-bbbc99d2317d] called
+2023-02-08 11:16:06.312212 /380055934/ [f58f36d1-a796-11ed-b1c5-bbbc99d2317d] called
+2023-02-08 11:16:07.762282 /380055934/ [557e6dd0-a798-11ed-b1c5-bbbc99d2317d] called
+2023-02-08 11:16:51.262900 /380055934/ [TestPeriodactivate] HttpClientException: 400 Bad Request: IMAGE_PROCESS_FAILED
+
+2023-02-08 11:16:59.408327  [Program starting..] 
+2023-02-08 11:16:59.522809  [Server listening on port 8085] 
+2023-02-08 11:17:30.924852 /380055934/ [/start] called
+2023-02-08 11:17:31.430980 /380055934/ [main-menu] /users status: 200
+2023-02-08 11:17:32.757876 /380055934/ [b9425380-a799-11ed-9759-69f4e8953be1] called
+2023-02-08 11:17:33.826722 /380055934/ [b9422c71-a799-11ed-9759-69f4e8953be1] called
+2023-02-08 11:17:35.201231 /380055934/ [cd8d5560-a799-11ed-9759-69f4e8953be1] called
+2023-02-08 11:18:59.754974  [Program starting..] 
+2023-02-08 11:18:59.828965  [Server listening on port 8085] 
+2023-02-08 11:20:34.058896 /380055934/ [/start] called
+2023-02-08 11:20:36.626653 /380055934/ [main-menu] /users status: 200
+2023-02-08 11:20:39.592894 /380055934/ [00fa28b1-a79a-11ed-9b98-8b7413559891] called
+2023-02-08 11:20:40.657262 /380055934/ [00fa28b0-a79a-11ed-9b98-8b7413559891] called
+2023-02-08 11:20:41.907017 /380055934/ [3cea1790-a79a-11ed-9b98-8b7413559891] called
+2023-02-08 11:21:49.659795 /380055934/ [00fa28b1-a79a-11ed-9b98-8b7413559891] called
+2023-02-08 11:21:49.666010  [Error] Connection refused
+#0      IOClient.send (package:http/src/io_client.dart:88:7)
+<asynchronous suspension>
+#1      BaseClient._sendUnstreamed (package:http/src/base_client.dart:93:32)
+<asynchronous suspension>
+#2      _withClient (package:http/http.dart:164:12)
+<asynchronous suspension>
+#3      dashBoardText.<anonymous closure> (file:///home/yukkop/Projects/gwp/vpn-system/vpn-telegram-bot/bin/pages/dash-board.page.dart:18:7)
+<asynchronous suspension>
+#4      Page._render (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:99:21)
+<asynchronous suspension>
+#5      Page._constructRender.<anonymous closure> (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:70:7)
+<asynchronous suspension>
+
+2023-02-08 11:22:06.019051 /380055934/ [00fa28b1-a79a-11ed-9b98-8b7413559891] called
+2023-02-08 11:22:06.021151  [Error] Connection refused
+#0      IOClient.send (package:http/src/io_client.dart:88:7)
+<asynchronous suspension>
+#1      BaseClient._sendUnstreamed (package:http/src/base_client.dart:93:32)
+<asynchronous suspension>
+#2      _withClient (package:http/http.dart:164:12)
+<asynchronous suspension>
+#3      dashBoardText.<anonymous closure> (file:///home/yukkop/Projects/gwp/vpn-system/vpn-telegram-bot/bin/pages/dash-board.page.dart:18:7)
+<asynchronous suspension>
+#4      Page._render (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:99:21)
+<asynchronous suspension>
+#5      Page._constructRender.<anonymous closure> (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:70:7)
+<asynchronous suspension>
+
+2023-02-08 11:22:17.317017  [Program starting..] 
+2023-02-08 11:22:17.409402  [Server listening on port 8085] 
+2023-02-08 11:22:20.880836 /380055934/ [/start] called
+2023-02-08 11:22:21.504326 /380055934/ [main-menu] /users status: 200
+2023-02-08 11:22:22.573206 /380055934/ [76ca3941-a79a-11ed-bb31-bff88f699855] called
+2023-02-08 11:22:26.366122 /380055934/ [76ca3940-a79a-11ed-bb31-bff88f699855] called
+2023-02-08 11:22:28.582174 /380055934/ [7bec2870-a79a-11ed-bb31-bff88f699855] called
+2023-02-08 11:24:23.935733 /380055934/ [76ca3941-a79a-11ed-bb31-bff88f699855] called
+2023-02-08 11:24:25.590072 /380055934/ [76ca3940-a79a-11ed-bb31-bff88f699855] called
+2023-02-08 11:24:26.834477 /380055934/ [7bec4f80-a79a-11ed-bb31-bff88f699855] called
+2023-02-08 11:26:05.970010 /380055934/ [76ca3941-a79a-11ed-bb31-bff88f699855] called
+2023-02-08 11:26:09.041142 /380055934/ [76ca3940-a79a-11ed-bb31-bff88f699855] called
+2023-02-08 11:26:10.681407 /380055934/ [7bec4f80-a79a-11ed-bb31-bff88f699855] called
+2023-02-08 11:26:28.411118 /380055934/ [76ca3941-a79a-11ed-bb31-bff88f699855] called
+2023-02-08 11:26:29.452419 /380055934/ [76ca3940-a79a-11ed-bb31-bff88f699855] called
+2023-02-08 11:27:00.256542 /380055934/ [7bec4f80-a79a-11ed-bb31-bff88f699855] called
+2023-02-08 11:27:52.696171 /380055934/ [/start] called
+2023-02-08 11:28:00.642774 /380055934/ [/start] called
+2023-02-08 11:28:07.608558  [Program starting..] 
+2023-02-08 11:28:07.686309  [Server listening on port 8085] 
+2023-02-08 11:28:15.452990 /380055934/ [/start] called
+2023-02-08 11:28:15.462845 /380055934/ [/start] called
+2023-02-08 11:28:15.464760 /380055934/ [/start] called
+2023-02-08 11:28:15.466895 /380055934/ [/start] called
+2023-02-08 11:28:15.977918 /380055934/ [/start] called
+2023-02-08 11:28:19.194325 /380055934/ [/start] called
+2023-02-08 11:28:36.812748  [Error] Connection closed before full header was received
+#0      IOClient.send (package:http/src/io_client.dart:90:7)
+<asynchronous suspension>
+#1      BaseClient._sendUnstreamed (package:http/src/base_client.dart:93:32)
+<asynchronous suspension>
+#2      _withClient (package:http/http.dart:164:12)
+<asynchronous suspension>
+#3      mainMenuKeyboard.<anonymous closure> (file:///home/yukkop/Projects/gwp/vpn-system/vpn-telegram-bot/bin/pages/main.page.dart:83:7)
+<asynchronous suspension>
+#4      new Keyboard.function.<anonymous closure> (package:vpn_telegram_bot/page-giga-mega-trash/keyboard.hectic-tg.dart:19:29)
+<asynchronous suspension>
+#5      Page._render (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:105:38)
+<asynchronous suspension>
+#6      Page._constructRender.<anonymous closure> (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:70:7)
+<asynchronous suspension>
+
+2023-02-08 11:28:36.813862  [Error] Connection closed before full header was received
+#0      IOClient.send (package:http/src/io_client.dart:90:7)
+<asynchronous suspension>
+#1      BaseClient._sendUnstreamed (package:http/src/base_client.dart:93:32)
+<asynchronous suspension>
+#2      _withClient (package:http/http.dart:164:12)
+<asynchronous suspension>
+#3      mainMenuKeyboard.<anonymous closure> (file:///home/yukkop/Projects/gwp/vpn-system/vpn-telegram-bot/bin/pages/main.page.dart:83:7)
+<asynchronous suspension>
+#4      new Keyboard.function.<anonymous closure> (package:vpn_telegram_bot/page-giga-mega-trash/keyboard.hectic-tg.dart:19:29)
+<asynchronous suspension>
+#5      Page._render (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:105:38)
+<asynchronous suspension>
+#6      Page._constructRender.<anonymous closure> (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:70:7)
+<asynchronous suspension>
+
+2023-02-08 11:28:36.814919  [Error] Connection closed before full header was received
+#0      IOClient.send (package:http/src/io_client.dart:90:7)
+<asynchronous suspension>
+#1      BaseClient._sendUnstreamed (package:http/src/base_client.dart:93:32)
+<asynchronous suspension>
+#2      _withClient (package:http/http.dart:164:12)
+<asynchronous suspension>
+#3      mainMenuKeyboard.<anonymous closure> (file:///home/yukkop/Projects/gwp/vpn-system/vpn-telegram-bot/bin/pages/main.page.dart:83:7)
+<asynchronous suspension>
+#4      new Keyboard.function.<anonymous closure> (package:vpn_telegram_bot/page-giga-mega-trash/keyboard.hectic-tg.dart:19:29)
+<asynchronous suspension>
+#5      Page._render (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:105:38)
+<asynchronous suspension>
+#6      Page._constructRender.<anonymous closure> (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:70:7)
+<asynchronous suspension>
+
+2023-02-08 11:28:36.815971  [Error] Connection closed before full header was received
+#0      IOClient.send (package:http/src/io_client.dart:90:7)
+<asynchronous suspension>
+#1      BaseClient._sendUnstreamed (package:http/src/base_client.dart:93:32)
+<asynchronous suspension>
+#2      _withClient (package:http/http.dart:164:12)
+<asynchronous suspension>
+#3      mainMenuKeyboard.<anonymous closure> (file:///home/yukkop/Projects/gwp/vpn-system/vpn-telegram-bot/bin/pages/main.page.dart:83:7)
+<asynchronous suspension>
+#4      new Keyboard.function.<anonymous closure> (package:vpn_telegram_bot/page-giga-mega-trash/keyboard.hectic-tg.dart:19:29)
+<asynchronous suspension>
+#5      Page._render (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:105:38)
+<asynchronous suspension>
+#6      Page._constructRender.<anonymous closure> (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:70:7)
+<asynchronous suspension>
+
+2023-02-08 11:28:36.817188  [Error] Connection closed before full header was received
+#0      IOClient.send (package:http/src/io_client.dart:90:7)
+<asynchronous suspension>
+#1      BaseClient._sendUnstreamed (package:http/src/base_client.dart:93:32)
+<asynchronous suspension>
+#2      _withClient (package:http/http.dart:164:12)
+<asynchronous suspension>
+#3      mainMenuKeyboard.<anonymous closure> (file:///home/yukkop/Projects/gwp/vpn-system/vpn-telegram-bot/bin/pages/main.page.dart:83:7)
+<asynchronous suspension>
+#4      new Keyboard.function.<anonymous closure> (package:vpn_telegram_bot/page-giga-mega-trash/keyboard.hectic-tg.dart:19:29)
+<asynchronous suspension>
+#5      Page._render (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:105:38)
+<asynchronous suspension>
+#6      Page._constructRender.<anonymous closure> (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:70:7)
+<asynchronous suspension>
+
+2023-02-08 11:28:36.818201  [Error] Connection closed before full header was received
+#0      IOClient.send (package:http/src/io_client.dart:90:7)
+<asynchronous suspension>
+#1      BaseClient._sendUnstreamed (package:http/src/base_client.dart:93:32)
+<asynchronous suspension>
+#2      _withClient (package:http/http.dart:164:12)
+<asynchronous suspension>
+#3      mainMenuKeyboard.<anonymous closure> (file:///home/yukkop/Projects/gwp/vpn-system/vpn-telegram-bot/bin/pages/main.page.dart:83:7)
+<asynchronous suspension>
+#4      new Keyboard.function.<anonymous closure> (package:vpn_telegram_bot/page-giga-mega-trash/keyboard.hectic-tg.dart:19:29)
+<asynchronous suspension>
+#5      Page._render (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:105:38)
+<asynchronous suspension>
+#6      Page._constructRender.<anonymous closure> (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:70:7)
+<asynchronous suspension>
+
+2023-02-08 11:28:50.448914 /380055934/ [/start] called
+2023-02-08 11:28:50.454257  [Error] Connection refused
+#0      IOClient.send (package:http/src/io_client.dart:88:7)
+<asynchronous suspension>
+#1      BaseClient._sendUnstreamed (package:http/src/base_client.dart:93:32)
+<asynchronous suspension>
+#2      _withClient (package:http/http.dart:164:12)
+<asynchronous suspension>
+#3      mainMenuKeyboard.<anonymous closure> (file:///home/yukkop/Projects/gwp/vpn-system/vpn-telegram-bot/bin/pages/main.page.dart:83:7)
+<asynchronous suspension>
+#4      new Keyboard.function.<anonymous closure> (package:vpn_telegram_bot/page-giga-mega-trash/keyboard.hectic-tg.dart:19:29)
+<asynchronous suspension>
+#5      Page._render (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:105:38)
+<asynchronous suspension>
+#6      Page._constructRender.<anonymous closure> (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:70:7)
+<asynchronous suspension>
+
+2023-02-08 11:29:13.075595  [Program starting..] 
+2023-02-08 11:29:13.152030  [Server listening on port 8085] 
+2023-02-08 11:29:14.756412 /380055934/ [/start] called
+2023-02-08 11:29:15.217227 /380055934/ [main-menu] /users status: 200
+2023-02-08 11:29:17.642579 /380055934/ [6eac0490-a79b-11ed-bd46-53e4b92f92e8] called
+2023-02-08 11:29:19.231550 /380055934/ [6eabdd81-a79b-11ed-bd46-53e4b92f92e8] called
+2023-02-08 11:29:20.640861 /380055934/ [7202a9a0-a79b-11ed-bd46-53e4b92f92e8] called
+2023-02-08 11:29:44.323865 /380055934/ [6eac0490-a79b-11ed-bd46-53e4b92f92e8] called
+2023-02-08 11:29:46.744634 /380055934/ [6eabdd81-a79b-11ed-bd46-53e4b92f92e8] called
+2023-02-08 11:29:48.030979 /380055934/ [72028290-a79b-11ed-bd46-53e4b92f92e8] called
+2023-02-08 11:30:13.752166 /380055934/ [6eac0490-a79b-11ed-bd46-53e4b92f92e8] called
+2023-02-08 11:30:14.742533 /380055934/ [6eabdd81-a79b-11ed-bd46-53e4b92f92e8] called
+2023-02-08 11:30:15.846024 /380055934/ [72028290-a79b-11ed-bd46-53e4b92f92e8] called
+2023-02-08 11:30:32.003038 /380055934/ [6eac0490-a79b-11ed-bd46-53e4b92f92e8] called
+2023-02-08 11:30:33.080520 /380055934/ [6eabdd81-a79b-11ed-bd46-53e4b92f92e8] called
+2023-02-08 11:30:34.025283 /380055934/ [7202a9a0-a79b-11ed-bd46-53e4b92f92e8] called
+2023-02-08 11:30:53.577010 /380055934/ [6eac0490-a79b-11ed-bd46-53e4b92f92e8] called
+2023-02-08 11:30:54.803750 /380055934/ [6eabdd81-a79b-11ed-bd46-53e4b92f92e8] called
+2023-02-08 11:30:55.944677 /380055934/ [72028290-a79b-11ed-bd46-53e4b92f92e8] called
+2023-02-08 11:31:41.319803 /380055934/ [/start] called
+2023-02-08 11:31:41.329891  [Error] Connection refused
+#0      IOClient.send (package:http/src/io_client.dart:88:7)
+<asynchronous suspension>
+#1      BaseClient._sendUnstreamed (package:http/src/base_client.dart:93:32)
+<asynchronous suspension>
+#2      _withClient (package:http/http.dart:164:12)
+<asynchronous suspension>
+#3      mainMenuKeyboard.<anonymous closure> (file:///home/yukkop/Projects/gwp/vpn-system/vpn-telegram-bot/bin/pages/main.page.dart:83:7)
+<asynchronous suspension>
+#4      new Keyboard.function.<anonymous closure> (package:vpn_telegram_bot/page-giga-mega-trash/keyboard.hectic-tg.dart:19:29)
+<asynchronous suspension>
+#5      Page._render (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:105:38)
+<asynchronous suspension>
+#6      Page._constructRender.<anonymous closure> (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:70:7)
+<asynchronous suspension>
+
+2023-02-08 11:31:43.160470 /380055934/ [6eac0490-a79b-11ed-bd46-53e4b92f92e8] called
+2023-02-08 11:31:43.165322  [Error] Connection refused
+#0      IOClient.send (package:http/src/io_client.dart:88:7)
+<asynchronous suspension>
+#1      BaseClient._sendUnstreamed (package:http/src/base_client.dart:93:32)
+<asynchronous suspension>
+#2      _withClient (package:http/http.dart:164:12)
+<asynchronous suspension>
+#3      dashBoardText.<anonymous closure> (file:///home/yukkop/Projects/gwp/vpn-system/vpn-telegram-bot/bin/pages/dash-board.page.dart:18:7)
+<asynchronous suspension>
+#4      Page._render (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:99:21)
+<asynchronous suspension>
+#5      Page._constructRender.<anonymous closure> (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:70:7)
+<asynchronous suspension>
+
+2023-02-08 11:31:51.325760 /380055934/ [/start] called
+2023-02-08 11:31:55.658501 /380055934/ [main-menu] /users status: 200
+2023-02-08 11:32:02.221900 /380055934/ [6eac0490-a79b-11ed-bd46-53e4b92f92e8] called
+2023-02-08 11:32:03.481707 /380055934/ [6eabdd81-a79b-11ed-bd46-53e4b92f92e8] called
+2023-02-08 11:32:04.686476 /380055934/ [72028290-a79b-11ed-bd46-53e4b92f92e8] called
+2023-02-08 11:35:40.382218  [Program starting..] 
+2023-02-08 11:35:40.467890  [Server listening on port 8085] 
+2023-02-08 11:36:10.707905  [Program starting..] 
+2023-02-08 11:36:10.790070  [Server listening on port 8085] 
+2023-02-08 11:36:12.533996 /380055934/ [/start] called
+2023-02-08 11:43:01.209805 /380055934/ [/start] called
+2023-02-08 11:43:04.832798 /380055934/ [/start] called
+2023-02-08 11:43:09.399944  [Error] Connection closed before full header was received
+#0      IOClient.send (package:http/src/io_client.dart:90:7)
+<asynchronous suspension>
+#1      BaseClient._sendUnstreamed (package:http/src/base_client.dart:93:32)
+<asynchronous suspension>
+#2      _withClient (package:http/http.dart:164:12)
+<asynchronous suspension>
+#3      mainMenuKeyboard.<anonymous closure> (file:///home/yukkop/Projects/gwp/vpn-system/vpn-telegram-bot/bin/pages/main.page.dart:92:7)
+<asynchronous suspension>
+#4      new Keyboard.function.<anonymous closure> (package:vpn_telegram_bot/page-giga-mega-trash/keyboard.hectic-tg.dart:19:29)
+<asynchronous suspension>
+#5      Page._render (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:105:38)
+<asynchronous suspension>
+#6      Page._constructRender.<anonymous closure> (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:70:7)
+<asynchronous suspension>
+
+2023-02-08 11:43:09.400768  [Error] Connection closed before full header was received
+#0      IOClient.send (package:http/src/io_client.dart:90:7)
+<asynchronous suspension>
+#1      BaseClient._sendUnstreamed (package:http/src/base_client.dart:93:32)
+<asynchronous suspension>
+#2      _withClient (package:http/http.dart:164:12)
+<asynchronous suspension>
+#3      mainMenuKeyboard.<anonymous closure> (file:///home/yukkop/Projects/gwp/vpn-system/vpn-telegram-bot/bin/pages/main.page.dart:92:7)
+<asynchronous suspension>
+#4      new Keyboard.function.<anonymous closure> (package:vpn_telegram_bot/page-giga-mega-trash/keyboard.hectic-tg.dart:19:29)
+<asynchronous suspension>
+#5      Page._render (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:105:38)
+<asynchronous suspension>
+#6      Page._constructRender.<anonymous closure> (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:70:7)
+<asynchronous suspension>
+
+2023-02-08 11:43:09.401844  [Error] Connection closed before full header was received
+#0      IOClient.send (package:http/src/io_client.dart:90:7)
+<asynchronous suspension>
+#1      BaseClient._sendUnstreamed (package:http/src/base_client.dart:93:32)
+<asynchronous suspension>
+#2      _withClient (package:http/http.dart:164:12)
+<asynchronous suspension>
+#3      mainMenuKeyboard.<anonymous closure> (file:///home/yukkop/Projects/gwp/vpn-system/vpn-telegram-bot/bin/pages/main.page.dart:92:7)
+<asynchronous suspension>
+#4      new Keyboard.function.<anonymous closure> (package:vpn_telegram_bot/page-giga-mega-trash/keyboard.hectic-tg.dart:19:29)
+<asynchronous suspension>
+#5      Page._render (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:105:38)
+<asynchronous suspension>
+#6      Page._constructRender.<anonymous closure> (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:70:7)
+<asynchronous suspension>
+
+2023-02-08 11:43:26.983544  [Program starting..] 
+2023-02-08 11:43:27.074915  [Server listening on port 8085] 
+2023-02-08 11:43:38.626812 /380055934/ [/start] called
+2023-02-08 11:43:38.649090  [Error] Connection refused
+#0      IOClient.send (package:http/src/io_client.dart:88:7)
+<asynchronous suspension>
+#1      BaseClient._sendUnstreamed (package:http/src/base_client.dart:93:32)
+<asynchronous suspension>
+#2      _withClient (package:http/http.dart:164:12)
+<asynchronous suspension>
+#3      mainMenuKeyboard.<anonymous closure> (file:///home/yukkop/Projects/gwp/vpn-system/vpn-telegram-bot/bin/pages/main.page.dart:92:7)
+<asynchronous suspension>
+#4      new Keyboard.function.<anonymous closure> (package:vpn_telegram_bot/page-giga-mega-trash/keyboard.hectic-tg.dart:19:29)
+<asynchronous suspension>
+#5      Page._render (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:105:38)
+<asynchronous suspension>
+#6      Page._constructRender.<anonymous closure> (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:70:7)
+<asynchronous suspension>
+
+2023-02-08 11:44:46.678579 /380055934/ [/start] called
+2023-02-08 11:44:52.455636 /380055934/ [main-menu] /users status: 200
+2023-02-08 11:44:54.794717 /380055934/ [6bffe570-a79d-11ed-bc40-c389b3a4aff7] called
+2023-02-08 11:45:00.043347 /380055934/ [6bffbe60-a79d-11ed-bc40-c389b3a4aff7] called
+2023-02-08 11:47:34.779521 /380055934/ [a2c6b930-a79d-11ed-bc40-c389b3a4aff7] called
+2023-02-08 11:47:52.332855 /380055934/ [6bffe570-a79d-11ed-bc40-c389b3a4aff7] called
+2023-02-08 11:47:57.563941 /380055934/ [6bffbe60-a79d-11ed-bc40-c389b3a4aff7] called
+2023-02-08 11:47:59.419875 /380055934/ [a2c69220-a79d-11ed-bc40-c389b3a4aff7] called
+2023-02-08 11:48:54.233563 /380055934/ [6bffe570-a79d-11ed-bc40-c389b3a4aff7] called
+2023-02-08 11:48:55.347879 /380055934/ [6bffbe60-a79d-11ed-bc40-c389b3a4aff7] called
+2023-02-08 11:48:57.235550 /380055934/ [a2c6b930-a79d-11ed-bc40-c389b3a4aff7] called
+2023-02-08 11:50:48.536408  [Program starting..] 
+2023-02-08 11:50:48.634580  [Server listening on port 8085] 
+2023-02-08 11:50:50.882294 /380055934/ [/start] called
+2023-02-08 11:50:50.903326  [Error] Connection refused
+#0      IOClient.send (package:http/src/io_client.dart:88:7)
+<asynchronous suspension>
+#1      BaseClient._sendUnstreamed (package:http/src/base_client.dart:93:32)
+<asynchronous suspension>
+#2      _withClient (package:http/http.dart:164:12)
+<asynchronous suspension>
+#3      mainMenuKeyboard.<anonymous closure> (file:///home/yukkop/Projects/gwp/vpn-system/vpn-telegram-bot/bin/pages/main.page.dart:92:7)
+<asynchronous suspension>
+#4      new Keyboard.function.<anonymous closure> (package:vpn_telegram_bot/page-giga-mega-trash/keyboard.hectic-tg.dart:19:29)
+<asynchronous suspension>
+#5      Page._render (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:105:38)
+<asynchronous suspension>
+#6      Page._constructRender.<anonymous closure> (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:70:7)
+<asynchronous suspension>
+
+2023-02-08 11:50:56.596887 /380055934/ [72cb9790-a79e-11ed-8d0c-9dad03c2ee50] called
+2023-02-08 11:50:56.598982  [Error] Connection refused
+#0      IOClient.send (package:http/src/io_client.dart:88:7)
+<asynchronous suspension>
+#1      BaseClient._sendUnstreamed (package:http/src/base_client.dart:93:32)
+<asynchronous suspension>
+#2      _withClient (package:http/http.dart:164:12)
+<asynchronous suspension>
+#3      mainMenuKeyboard.<anonymous closure> (file:///home/yukkop/Projects/gwp/vpn-system/vpn-telegram-bot/bin/pages/main.page.dart:92:7)
+<asynchronous suspension>
+#4      new Keyboard.function.<anonymous closure> (package:vpn_telegram_bot/page-giga-mega-trash/keyboard.hectic-tg.dart:19:29)
+<asynchronous suspension>
+#5      Page._render (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:105:38)
+<asynchronous suspension>
+#6      Page._constructRender.<anonymous closure> (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:70:7)
+<asynchronous suspension>
+
+2023-02-08 11:51:01.408797 /380055934/ [/start] called
+2023-02-08 11:51:01.411587  [Error] Connection refused
+#0      IOClient.send (package:http/src/io_client.dart:88:7)
+<asynchronous suspension>
+#1      BaseClient._sendUnstreamed (package:http/src/base_client.dart:93:32)
+<asynchronous suspension>
+#2      _withClient (package:http/http.dart:164:12)
+<asynchronous suspension>
+#3      mainMenuKeyboard.<anonymous closure> (file:///home/yukkop/Projects/gwp/vpn-system/vpn-telegram-bot/bin/pages/main.page.dart:92:7)
+<asynchronous suspension>
+#4      new Keyboard.function.<anonymous closure> (package:vpn_telegram_bot/page-giga-mega-trash/keyboard.hectic-tg.dart:19:29)
+<asynchronous suspension>
+#5      Page._render (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:105:38)
+<asynchronous suspension>
+#6      Page._constructRender.<anonymous closure> (package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart:70:7)
+<asynchronous suspension>
+
+2023-02-08 11:51:12.484197 /380055934/ [72cb9790-a79e-11ed-8d0c-9dad03c2ee50] called
+2023-02-08 11:51:15.828764 /380055934/ [72cc0cc1-a79e-11ed-8d0c-9dad03c2ee50] called
+2023-02-08 11:51:17.331453 /380055934/ [72cc0cc0-a79e-11ed-8d0c-9dad03c2ee50] called
+2023-02-08 11:51:19.052782 /380055934/ [83a84db0-a79e-11ed-8d0c-9dad03c2ee50] called
+2023-02-08 11:51:25.408478 /380055934/ [TestPeriodactivate] HttpClientException: 400 Bad Request: IMAGE_PROCESS_FAILED
+
+2023-02-08 11:51:33.963747 /380055934/ [72cc0cc1-a79e-11ed-8d0c-9dad03c2ee50] called
+2023-02-08 11:51:37.581120 /380055934/ [72cc0cc0-a79e-11ed-8d0c-9dad03c2ee50] called
+2023-02-08 11:51:39.611531 /380055934/ [83a826a0-a79e-11ed-8d0c-9dad03c2ee50] called
+2023-02-08 11:51:50.674238 /380055934/ [72cc0cc1-a79e-11ed-8d0c-9dad03c2ee50] called
+2023-02-08 11:51:52.934279 /380055934/ [72cc0cc0-a79e-11ed-8d0c-9dad03c2ee50] called
+2023-02-08 11:51:58.436568 /380055934/ [83a84db0-a79e-11ed-8d0c-9dad03c2ee50] called

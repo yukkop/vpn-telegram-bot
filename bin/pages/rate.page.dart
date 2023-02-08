@@ -9,7 +9,7 @@ import 'main.page.dart';
 import 'pay/pay-choice.page.dart';
 import 'pay/pay.const.dart';
 
-late final rate = Page(
+final rate = Page(
   text: Text.function((pageMessage, user) async {
     return dialogDataSource.getMessage('rate', LayoutEnum.ru);
   }),

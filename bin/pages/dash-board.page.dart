@@ -1,9 +1,6 @@
 import 'dart:convert';
-import 'dart:io';
 
-import 'package:get_it/get_it.dart';
 import 'package:http/http.dart';
-import 'package:teledart/teledart.dart';
 import 'package:vpn_telegram_bot/data/layout.enum.dart';
 import 'package:vpn_telegram_bot/page-giga-mega-trash/button.hectic-tg.dart';
 import 'package:vpn_telegram_bot/page-giga-mega-trash/keyboard.hectic-tg.dart';

@@ -10,10 +10,7 @@ import 'package:vpn_telegram_bot/page-giga-mega-trash/text.hectic-tg.dart';
 
 import '../../configurations.dart';
 import '../../variables.dart';
-import '../main.page.dart';
 import 'pay.const.dart';
-
-var priceForDay = 10;
 
 Future<Response> iokassaReques(
     int userId, int messageId, int price, int days) async {

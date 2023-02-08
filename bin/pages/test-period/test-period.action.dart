@@ -4,7 +4,7 @@ import 'package:vpn_telegram_bot/page-giga-mega-trash/text.hectic-tg.dart';
 import '../region/choice-region.page.dart';
 import 'test-period.message.dart';
 
-late final testPeriodAction = Page(
+final testPeriodAction = Page(
     text: Text.string('action'),
     renderMethod: (teleDart, message, user, text, markup) async {
       await testPeriodMessage.render(message, user);

@@ -7,8 +7,9 @@ import 'package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart';
 import 'package:vpn_telegram_bot/page-giga-mega-trash/text.hectic-tg.dart';
 
 import '../../configurations.dart';
+import '../info/wireguard-info.message.dart';
 import '../main.page.dart';
-import 'instruction.message.dart';
+import '../info/instruction.message.dart';
 
 // Недостаток самописной утилиты, оборачиваю множество действий под пустую страницу, хотя это не требуеться
 void changeRegion(
@@ -18,7 +19,6 @@ void changeRegion(
   await instruction.render(message, user);
   Response response;
 
-  // /users/<userId>/changeRegion
   response = await get(
     Uri.http(Configurations.backendHost, "/regions"),
   );
@@ -50,12 +50,19 @@ void changeRegion(
 
   //try send config
   try {
+    var response =
+        await get(Uri.http(Configurations.backendHost, "/users/${user.id}"));
+
+    var responseBody = jsonDecode(response.body);
+    final username = responseBody['username'];
+    final regionName = responseBody['region']['regionName'];
+
     response = await get(
         Uri.http(Configurations.backendHost, "/users/${user.id}/config"));
 
     var configFileBody = jsonDecode(response.body)['configFile'];
 
-    final file = File('config.conf');
+    final file = File('${username}_${regionName}_VPNster.conf');
     file.writeAsStringSync(configFileBody);
 
     await Page.sendFile(teleDart, message.chat.id, file);
@@ -65,6 +72,7 @@ void changeRegion(
         body: '${exception.toString()}\n${stacktrace.toString()}');
   }
 
+  await wireguardInfo.render(message, user);
   mainMenuSend.render(message, user);
 }
 
