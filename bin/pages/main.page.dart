@@ -21,11 +21,21 @@ final startMenu = Page.withoutRegistration(
   name: 'main-menu',
   text: mainMenuText,
   renderMethod: (teleDart, pageMessage, user, text, markup) async {
-    var response = await post(Uri.http(Configurations.backendHost, "/users"),
+    var response =
+        await get(Uri.http(Configurations.backendHost, "/users/${user.id}"));
+
+    String regionId = '4f4abb0b-063b-4a91-b944-acfbf68c3a1b';
+    if (response.statusCode == 200) {
+      var responseBody = jsonDecode(response.body);
+      regionId = responseBody['region']?['id'] ??
+          '4f4abb0b-063b-4a91-b944-acfbf68c3a1b';
+    }
+
+    response = await post(Uri.http(Configurations.backendHost, "/users"),
         body: jsonEncode({
           "telegramId": user.id.toString(),
           "username": user.username,
-          "regionId": '4f4abb0b-063b-4a91-b944-acfbf68c3a1b'
+          "regionId": regionId
         }));
 
     Loger.log('main-menu',
@@ -78,7 +88,7 @@ final mainMenuUsualEntry = [
   ]
 ];
 
-late final mainMenuKeyboard = Keyboard.function(((pageMessage, user) async {
+final mainMenuKeyboard = Keyboard.function(((pageMessage, user) async {
   var response =
       await get(Uri.http(Configurations.backendHost, "/users/${user.id}"));
 

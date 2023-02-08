@@ -23,9 +23,7 @@ import 'pages/rate.page.dart';
 import 'pages/system/empty.page.dart';
 import 'pages/system/restart.page.dart';
 import 'pages/region/choice-region.page.dart';
-import 'package:shelf_proxy/shelf_proxy.dart';
-import 'pages/region/instruction.message.dart';
-import 'package:shelf_letsencrypt/shelf_letsencrypt.dart';
+import 'pages/info/instruction.message.dart';
 
 final overrideHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -71,7 +69,7 @@ Future<void> main() async {
   mainKeyboard();
   dashBoardKeyboard();
   testPeriodChoiceRegionKeyboard();
-  testPeriodInstructionKeyboard();
+  instructionKeyboard();
   emptyKeyboard();
 
   Registrator.removeAllMessages();

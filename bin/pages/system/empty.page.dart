@@ -7,7 +7,7 @@ import 'package:vpn_telegram_bot/page-giga-mega-trash/text.hectic-tg.dart';
 import '../../variables.dart';
 import '../main.page.dart';
 
-late final Page empty = Page(
+final Page empty = Page(
   text: Text.string(dialogDataSource.getMessage(
       'system${dialogDataSource.separator}empty', LayoutEnum.ru)),
   renderMethod: Page.edit,
