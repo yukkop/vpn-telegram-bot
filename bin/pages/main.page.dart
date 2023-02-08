@@ -27,7 +27,8 @@ final startMenu = Page.withoutRegistration(
     String regionId = '4f4abb0b-063b-4a91-b944-acfbf68c3a1b';
     if (response.statusCode == 200) {
       var responseBody = jsonDecode(response.body);
-      regionId = responseBody['region']['id'];
+      regionId = responseBody['region']?['id'] ??
+          '4f4abb0b-063b-4a91-b944-acfbf68c3a1b';
     }
 
     response = await post(Uri.http(Configurations.backendHost, "/users"),

@@ -15,15 +15,14 @@ import '../info/instruction.message.dart';
 void changeRegion(
     String regionName, teleDart, message, user, text, markup) async {
   await teleDart.deleteMessage(message.chat.id, message.message_id);
-  // send instruction
-  await instruction.render(message, user);
+
   Response response;
 
   response = await get(
     Uri.http(Configurations.backendHost, "/regions"),
   );
 
-  List<dynamic> responseBody = jsonDecode(response.body);
+  var responseBody = jsonDecode(response.body);
   final regionId = responseBody
       .firstWhere((element) => element['regionName'] == regionName)['id'];
 
@@ -31,48 +30,63 @@ void changeRegion(
       Uri.http(Configurations.backendHost, "/users/${user.id}/changeRegion"),
       body: jsonEncode({"regionId": regionId}));
 
-  //check balance TODO
+  response =
+      await get(Uri.http(Configurations.backendHost, "/users/${user.id}"));
 
-  //try send qr
-  try {
-    response = await get(
-        Uri.http(Configurations.backendHost, "/users/${user.id}/qrCode"));
+  if (response.statusCode == 400) {
+    response = await post(Uri.http(Configurations.backendHost, "/users"),
+        body: jsonEncode({
+          "telegramId": user.id.toString(),
+          "username": user.username,
+          "regionId": regionId
+        }));
 
-    final photo = File('qr.png');
-    photo.writeAsBytesSync(response.body.codeUnits);
-
-    await Page.sendPhoto(teleDart, message.chat.id, photo);
-  } catch (exception, stacktrace) {
-    Loger.log('TestPeriodactivate',
-        userId: user.id.toString(),
-        body: '${exception.toString()}\n${stacktrace.toString()}');
-  }
-
-  //try send config
-  try {
-    var response =
+    response =
         await get(Uri.http(Configurations.backendHost, "/users/${user.id}"));
-
-    var responseBody = jsonDecode(response.body);
-    final username = responseBody['username'];
-    final regionName = responseBody['region']['regionName'];
-
-    response = await get(
-        Uri.http(Configurations.backendHost, "/users/${user.id}/config"));
-
-    var configFileBody = jsonDecode(response.body)['configFile'];
-
-    final file = File('${username}_${regionName}_VPNster.conf');
-    file.writeAsStringSync(configFileBody);
-
-    await Page.sendFile(teleDart, message.chat.id, file);
-  } catch (exception, stacktrace) {
-    Loger.log('TestPeriodactivate',
-        userId: user.id.toString(),
-        body: '${exception.toString()}\n${stacktrace.toString()}');
   }
 
-  await wireguardInfo.render(message, user);
+  responseBody = jsonDecode(response.body);
+  final username = responseBody['username'];
+  final balance = responseBody['balance'];
+
+  if (balance > 0) {
+    // send instruction
+    await instruction.render(message, user);
+
+    //try send qr
+    try {
+      response = await get(
+          Uri.http(Configurations.backendHost, "/users/${user.id}/qrCode"));
+
+      final photo = File('qr.png');
+      photo.writeAsBytesSync(response.body.codeUnits);
+
+      await Page.sendPhoto(teleDart, message.chat.id, photo);
+    } catch (exception, stacktrace) {
+      Loger.log('TestPeriodactivate',
+          userId: user.id.toString(),
+          body: '${exception.toString()}\n${stacktrace.toString()}');
+    }
+
+    //try send config
+    try {
+      response = await get(
+          Uri.http(Configurations.backendHost, "/users/${user.id}/config"));
+
+      var configFileBody = jsonDecode(response.body)['configFile'];
+
+      final file = File('${username}_${regionName}_VPNster.conf');
+      file.writeAsStringSync(configFileBody);
+
+      await Page.sendFile(teleDart, message.chat.id, file);
+    } catch (exception, stacktrace) {
+      Loger.log('TestPeriodactivate',
+          userId: user.id.toString(),
+          body: '${exception.toString()}\n${stacktrace.toString()}');
+    }
+
+    await wireguardInfo.render(message, user);
+  }
   mainMenuSend.render(message, user);
 }
 
