@@ -47,7 +47,7 @@ void dashBoardKeyboard() {
       Button.openPage(
           text: dialogDataSource.getButtonText(
               'dash-board', 'region', LayoutEnum.ru),
-          key: regionChoiceReplace.getKey())
+          key: regionChoiceEdit.getKey())
     ],
     [Button.openPage(text: 'Назад', key: mainMenuEdit.getKey())]
   ]);
