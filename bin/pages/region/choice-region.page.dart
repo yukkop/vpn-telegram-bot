@@ -29,7 +29,7 @@ final regionChoiceReplace = Page(
 List<String>? regionStaff(String regionName) {
   List<String> cortejAtvechau = List.filled(2, "");
   if (regionName == 'russia') {
-    cortejAtvechau[0] = 'Русский 🇷🇺';
+    cortejAtvechau[0] = 'Россия 🇷🇺';
     cortejAtvechau[1] = changeRegionRussia.getKey();
     return cortejAtvechau;
   } else if (regionName == 'netherlands') {
