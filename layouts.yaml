@@ -37,6 +37,10 @@
       message: 'Какой сервер Вы желаете выбрать?'
       buttons:
         back: '<< Назад'
+  help:
+    message: '@vpnster в телеграм'
+    buttons:
+      back: '<< Назад'
   instruction:
     message: 'Инструкция по подключению к VPNster
 

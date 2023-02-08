@@ -9,6 +9,7 @@ import 'package:vpn_telegram_bot/page-giga-mega-trash/text.hectic-tg.dart';
 
 import '../configurations.dart';
 import '../variables.dart';
+import 'info/help.page.dart';
 import 'main.page.dart';
 import 'region/choice-region.page.dart';
 import 'system/empty.page.dart';
@@ -40,13 +41,13 @@ void dashBoardKeyboard() {
       Button.openPage(
           text: dialogDataSource.getButtonText(
               'dash-board', 'help', LayoutEnum.ru),
-          key: empty.getKey())
-    ], // TODO
+          key: help.getKey())
+    ],
     [
       Button.openPage(
           text: dialogDataSource.getButtonText(
               'dash-board', 'region', LayoutEnum.ru),
-          key: regionChoiceReplace.getKey())
+          key: regionChoiceEdit.getKey())
     ],
     [Button.openPage(text: 'Назад', key: mainMenuEdit.getKey())]
   ]);
