@@ -15,6 +15,7 @@ import 'package:vpn_telegram_bot/page-giga-mega-trash/registrator.hectic-tg.dart
 import 'configurations.dart';
 import 'controlers/event_contoller.dart';
 import 'pages/dash-board.page.dart';
+import 'pages/info/help.page.dart';
 import 'pages/main.page.dart';
 import 'pages/pay/pay-choice.page.dart';
 import 'pages/rate.page.dart';
@@ -56,6 +57,7 @@ Future<void> main() async {
   rateKeyboard();
   mainKeyboard();
   dashBoardKeyboard();
+  helpKeyboard();
   testPeriodChoiceRegionKeyboard();
   instructionKeyboard();
   emptyKeyboard();
