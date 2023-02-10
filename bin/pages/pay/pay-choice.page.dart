@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart';
 import 'package:vpn_telegram_bot/constants.dart';
 import 'package:vpn_telegram_bot/data/layout.enum.dart';
+import 'package:vpn_telegram_bot/loger.dart';
 import 'package:vpn_telegram_bot/page-giga-mega-trash/button.hectic-tg.dart';
 import 'package:vpn_telegram_bot/page-giga-mega-trash/keyboard.hectic-tg.dart';
 import 'package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart';
@@ -32,6 +33,11 @@ Future<Response> iokassaReques(
           },
           "description": "$userId;$messageId;$price;$days"
         }''');
+
+  if (response.statusCode != 200) {
+    Loger.log(response.body);
+  }
+
   return response;
 }
 

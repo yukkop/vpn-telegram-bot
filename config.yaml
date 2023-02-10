@@ -1,7 +1,7 @@
 ﻿botToken: '5965008171:AAGsp9wshkkBz6pHAZp7EUcRHepIbSJ1mdQ'
 botUrl: 'https://t.me/Vpnster_bot'
 layoutsPath: 'layouts.yaml'
-iokassaToken: '976146:live_5K_OelXbldhwmPK_A2KUV2A2XQT8bH0xIwla92KJkPU'
+iokassaToken: '606187:test_rfWl9R66FvKB3QyzwGlid8deH9YiPcReTgv3r-KFSsA'
 backend:
   host: 'localhost'
   port: '8083'
