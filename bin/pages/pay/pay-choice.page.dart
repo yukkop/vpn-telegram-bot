@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart';
+import 'package:teledart/model.dart';
 import 'package:vpn_telegram_bot/constants.dart';
 import 'package:vpn_telegram_bot/data/layout.enum.dart';
 import 'package:vpn_telegram_bot/loger.dart';
@@ -13,8 +14,26 @@ import '../../configurations.dart';
 import '../../variables.dart';
 import 'pay.const.dart';
 
+class DescriptionData {
+  User user;
+  Message message;
+  int price;
+  int balls;
+
+  DescriptionData(this.user, this.message, this.price, this.balls);
+
+  String toJson() => jsonEncode(toMap());
+
+  Map<String, dynamic> toMap() => {
+        "user": user.toJson(),
+        "message": message.toJson(),
+        "price": price,
+        "balls": balls
+  };
+}
+
 Future<Response> iokassaReques(
-    int userId, int messageId, int price, int days) async {
+    User user, Message message, int price, int balls) async {
   var response =
       await post(Uri.https('api.yookassa.ru', "/v3/payments"), headers: {
     'Idempotence-Key': uuid.v1().toString(),
@@ -22,17 +41,17 @@ Future<Response> iokassaReques(
     'Authorization':
         'Basic ${base64.encode(utf8.encode(Configurations.iokassaToken))}'
   }, body: '''{
-          "amount": {
-            "value": "$price",
-            "currency": "RUB"
-          },
-          "capture": true,
-          "confirmation": {
-            "type": "redirect",
-            "return_url": "${Configurations.botUrl}"
-          },
-          "description": "$userId;$messageId;$price;$days"
-        }''');
+  "amount": {
+    "value": "$price",
+    "currency": "RUB"
+  },
+  "capture": true,
+  "confirmation": {
+    "type": "redirect",
+    "return_url": "${Configurations.botUrl}"
+  },
+  "description": ${DescriptionData(user, message, price, balls).toJson()}
+}''');
 
   if (response.statusCode != 200) {
     Loger.log(response.body);
@@ -87,9 +106,8 @@ late final payFor1Year = Page(
 
 void payKeyboard() {
   payFor1Day.changeKeyboard(Keyboard.function((pageMessage, user) async {
-    var responseBody = jsonDecode((await iokassaReques(
-            user.id, pageMessage.message_id, rubForDay, balsForDay))
-        .body);
+    var responseBody = jsonDecode(
+        (await iokassaReques(user, pageMessage, rubForDay, ballsForDay)).body);
     return [
       [
         Button.linked(
@@ -103,9 +121,8 @@ void payKeyboard() {
   }));
 
   payFor1Week.changeKeyboard(Keyboard.function((pageMessage, user) async {
-    var responseBody = jsonDecode((await iokassaReques(
-            user.id, pageMessage.message_id, rubForWeek, balsForWeek))
-        .body);
+    var responseBody = jsonDecode(
+        (await iokassaReques(user, pageMessage, rubForWeek, ballsForWeek)).body);
     return [
       [
         Button.linked(
@@ -119,9 +136,9 @@ void payKeyboard() {
   }));
 
   payFor1Month.changeKeyboard(Keyboard.function((pageMessage, user) async {
-    var responseBody = jsonDecode((await iokassaReques(
-            user.id, pageMessage.message_id, rubForMonth, balsForMonth))
-        .body);
+    var responseBody = jsonDecode(
+        (await iokassaReques(user, pageMessage, rubForMonth, ballsForMonth))
+            .body);
     return [
       [
         Button.linked(
@@ -135,9 +152,8 @@ void payKeyboard() {
   }));
 
   payFor1Year.changeKeyboard(Keyboard.function((pageMessage, user) async {
-    var responseBody = jsonDecode((await iokassaReques(
-            user.id, pageMessage.message_id, rubForYear, balsForYear))
-        .body);
+    var responseBody = jsonDecode(
+        (await iokassaReques(user, pageMessage, rubForYear, ballsForYear)).body);
     return [
       [
         Button.linked(
