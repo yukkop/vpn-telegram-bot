@@ -21,45 +21,41 @@ class EventController extends IController {
   }
 
   Future<Response> _iokassa(Request req) async {
-    try {
-      var body = await req.readAsString();
-      var data = jsonDecode(body) /* ["object"] */;
+    var body = await req.readAsString();
+    var data = jsonDecode(body) /* ["object"] */;
 
-      var description = data["description"];
+    var description = jsonDecode(data["description"]);
 
-      /* var price = description["price"];  */
-      var balls = data["balls"];
-      var message = Message.fromJson(description["message"]);
-      var user = User.fromJson(description["user"]);
+    /* var price = description["price"];  */
+    var balls = data["balls"];
+    var message = Message.fromJson(description["message"]);
+    var user = User.fromJson(description["user"]);
 
-      http.Response? response;
-      print('balls: $balls');
+    http.Response? response;
+    print('balls: $balls');
 
-      if (balls != null) {
-        if (balls == ballsForDay.toString()) {
-          await paidFor1Day.render(message, user);
-        } else if (balls == ballsForWeek.toString()) {
-          await paidFor1Week.render(message, user);
-        } else if (balls == ballsForMonth.toString()) {
-          await paidFor1Month.render(message, user);
-        } else if (balls == ballsForYear.toString()) {
-          await paidFor1Year.render(message, user);
-        }
-        regionChoiceReplace.render(message, user);
-
-        response = await http.patch(Uri.http(Configurations.backendHost,
-            "/users/${user.id}/addToBalance/$balls"));
+    if (balls != null) {
+      if (balls == ballsForDay.toString()) {
+        await paidFor1Day.render(message, user);
+      } else if (balls == ballsForWeek.toString()) {
+        await paidFor1Week.render(message, user);
+      } else if (balls == ballsForMonth.toString()) {
+        await paidFor1Month.render(message, user);
+      } else if (balls == ballsForYear.toString()) {
+        await paidFor1Year.render(message, user);
       }
+      regionChoiceReplace.render(message, user);
 
-      Loger.log('iokassa event',
-          userId: user.id.toString(),
-          body: 'balance request: ${response.toString()}');
-
-      /* final teleDart = GetIt.I<TeleDart>(); */
-
-      return Response.ok('Notified');
-    } catch (ecxeption) {
-      return Response.ok('ecxeption');
+      response = await http.patch(Uri.http(
+          Configurations.backendHost, "/users/${user.id}/addToBalance/$balls"));
     }
+
+    Loger.log('iokassa event',
+        userId: user.id.toString(),
+        body: 'balance request: ${response.toString()}');
+
+    /* final teleDart = GetIt.I<TeleDart>(); */
+
+    return Response.ok('Notified');
   }
 }

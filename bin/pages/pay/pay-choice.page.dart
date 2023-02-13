@@ -29,29 +29,34 @@ class DescriptionData {
         "message": message.toJson(),
         "price": price,
         "balls": balls
-  };
+      };
 }
 
 Future<Response> iokassaReques(
     User user, Message message, int price, int balls) async {
-  var response =
-      await post(Uri.https('api.yookassa.ru', "/v3/payments"), headers: {
-    'Idempotence-Key': uuid.v1().toString(),
-    'Content-Type': 'application/json',
-    'Authorization':
-        'Basic ${base64.encode(utf8.encode(Configurations.iokassaToken))}'
-  }, body: '''{
-  "amount": {
-    "value": "$price",
-    "currency": "RUB"
-  },
-  "capture": true,
-  "confirmation": {
-    "type": "redirect",
-    "return_url": "${Configurations.botUrl}"
-  },
-  "description": ${DescriptionData(user, message, price, balls).toJson()}
-}''');
+  var body = '''{
+"amount": {
+  "value": "$price",
+  "currency": "RUB"
+},
+"capture": true,
+"confirmation": {
+  "type": "redirect",
+  "return_url": "${Configurations.botUrl}"
+},
+"description": "${DescriptionData(user, message, price, balls).toJson().replaceAll('"', '\\"')}"
+}''';
+
+  print(body);
+
+  var response = await post(Uri.https('api.yookassa.test', "/v3/payments"),
+      headers: {
+        'Idempotence-Key': uuid.v1().toString(),
+        'Content-Type': 'application/json',
+        'Authorization':
+            'Basic ${base64.encode(utf8.encode(Configurations.iokassaToken))}'
+      },
+      body: body);
 
   if (response.statusCode != 200) {
     Loger.log(response.body);
@@ -122,7 +127,8 @@ void payKeyboard() {
 
   payFor1Week.changeKeyboard(Keyboard.function((pageMessage, user) async {
     var responseBody = jsonDecode(
-        (await iokassaReques(user, pageMessage, rubForWeek, ballsForWeek)).body);
+        (await iokassaReques(user, pageMessage, rubForWeek, ballsForWeek))
+            .body);
     return [
       [
         Button.linked(
@@ -153,7 +159,8 @@ void payKeyboard() {
 
   payFor1Year.changeKeyboard(Keyboard.function((pageMessage, user) async {
     var responseBody = jsonDecode(
-        (await iokassaReques(user, pageMessage, rubForYear, ballsForYear)).body);
+        (await iokassaReques(user, pageMessage, rubForYear, ballsForYear))
+            .body);
     return [
       [
         Button.linked(
