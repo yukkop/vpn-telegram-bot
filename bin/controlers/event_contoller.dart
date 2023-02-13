@@ -1,9 +1,7 @@
 import 'dart:convert';
 
-import 'package:get_it/get_it.dart';
 import 'package:shelf/shelf.dart';
 import 'package:teledart/model.dart';
-import 'package:teledart/teledart.dart';
 import 'package:http/http.dart' as http;
 import 'package:vpn_telegram_bot/loger.dart';
 import '../configurations.dart';
@@ -23,42 +21,45 @@ class EventController extends IController {
   }
 
   Future<Response> _iokassa(Request req) async {
-    var body = await req.readAsString();
-    var data = jsonDecode(body)["object"];
+    try {
+      var body = await req.readAsString();
+      var data = jsonDecode(body) /* ["object"] */;
 
-    String description = data["description"];
-    var vars = description.split(';');
-    var userId = vars[0];
-    var messageId = vars[1];
-    var days = vars[3];
+      var description = data["description"];
 
-    var fakeMessage = Message(
-        message_id: int.parse(messageId),
-        date: 0,
-        chat: Chat(id: int.parse(userId), type: 'private'));
-    var fakeUser =
-        User(id: int.parse(userId), is_bot: false, first_name: 'np way');
+      /* var price = description["price"];  */
+      var balls = data["balls"];
+      var message = Message.fromJson(description["message"]);
+      var user = User.fromJson(description["user"]);
 
-    if (days == balsForDay.toString()) {
-      await paidFor1Day.render(fakeMessage, fakeUser);
-    } else if (days == balsForWeek.toString()) {
-      await paidFor1Week.render(fakeMessage, fakeUser);
-    } else if (days == balsForMonth.toString()) {
-      await paidFor1Month.render(fakeMessage, fakeUser);
-    } else if (days == balsForYear.toString()) {
-      await paidFor1Year.render(fakeMessage, fakeUser);
+      http.Response? response;
+      print('balls: $balls');
+
+      if (balls != null) {
+        if (balls == ballsForDay.toString()) {
+          await paidFor1Day.render(message, user);
+        } else if (balls == ballsForWeek.toString()) {
+          await paidFor1Week.render(message, user);
+        } else if (balls == ballsForMonth.toString()) {
+          await paidFor1Month.render(message, user);
+        } else if (balls == ballsForYear.toString()) {
+          await paidFor1Year.render(message, user);
+        }
+        regionChoiceReplace.render(message, user);
+
+        response = await http.patch(Uri.http(Configurations.backendHost,
+            "/users/${user.id}/addToBalance/$balls"));
+      }
+
+      Loger.log('iokassa event',
+          userId: user.id.toString(),
+          body: 'balance request: ${response.toString()}');
+
+      /* final teleDart = GetIt.I<TeleDart>(); */
+
+      return Response.ok('Notified');
+    } catch (ecxeption) {
+      return Response.ok('ecxeption');
     }
-    regionChoiceReplace.render(fakeMessage, fakeUser);
-    var response = await http.patch(Uri.http(
-        Configurations.backendHost, "/users/$userId/addToBalance/$days"));
-
-    Loger.log('iokassa event',
-        userId: userId, body: 'balance request: $response');
-
-    final teleDart = GetIt.I<TeleDart>();
-
-    // teleDart.sendMessage(380055934, body);
-
-    return Response.ok('Notified');
   }
 }
