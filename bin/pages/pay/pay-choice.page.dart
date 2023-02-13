@@ -44,7 +44,7 @@ Future<Response> iokassaReques(
   "type": "redirect",
   "return_url": "${Configurations.botUrl}"
 },
-"description": "${DescriptionData(user, message, price, balls).toJson().replaceAll('"', '\\"')}"
+"description": "${DescriptionData(user, Message(message_id: message.message_id, chat: message.chat, date: message.date), price, balls).toJson().replaceAll('"', '\\"')}"
 }''';
 
   // print(body);
