@@ -47,9 +47,9 @@ Future<Response> iokassaReques(
 "description": "${DescriptionData(user, message, price, balls).toJson().replaceAll('"', '\\"')}"
 }''';
 
-  print(body);
+  // print(body);
 
-  var response = await post(Uri.https('api.yookassa.test', "/v3/payments"),
+  var response = await post(Uri.https('api.yookassa.ru', "/v3/payments"),
       headers: {
         'Idempotence-Key': uuid.v1().toString(),
         'Content-Type': 'application/json',
