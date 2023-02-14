@@ -24,17 +24,27 @@ class EventController extends IController {
     var body = await req.readAsString();
     var data = jsonDecode(body) /* ["object"] */;
 
-    var description = jsonDecode(data["description"]);
+    String description = data["description"];
+    var vars = description.split(':');
 
-    /* var price = description["price"];  */
-    var balls = data["balls"];
-    var message = Message.fromJson(description["message"]);
-    var user = User.fromJson(description["user"]);
+    var balls = vars[7];
+    var message = Message(
+      message_id: int.parse(vars[3]),
+      date: int.parse(vars[6]),
+      chat: Chat(
+        id: int.parse(vars[4]),
+        type: vars[5],
+      ),
+    );
+    var user = User(
+      id: int.parse(vars[0]),
+      is_bot: vars[1] == 'true' ? true : false,
+      first_name: vars[2],
+    );
 
     http.Response? response;
     print('balls: $balls');
 
-    if (balls != null) {
       if (balls == ballsForDay.toString()) {
         await paidFor1Day.render(message, user);
       } else if (balls == ballsForWeek.toString()) {
@@ -48,7 +58,6 @@ class EventController extends IController {
 
       response = await http.patch(Uri.http(
           Configurations.backendHost, "/users/${user.id}/addToBalance/$balls"));
-    }
 
     Loger.log('iokassa event',
         userId: user.id.toString(),
