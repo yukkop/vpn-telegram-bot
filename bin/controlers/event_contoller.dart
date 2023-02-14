@@ -22,7 +22,7 @@ class EventController extends IController {
 
   Future<Response> _iokassa(Request req) async {
     var body = await req.readAsString();
-    var data = jsonDecode(body) /* ["object"] */;
+    var data = jsonDecode(body)["object"];
 
     print(data);
     String description = data["description"];
