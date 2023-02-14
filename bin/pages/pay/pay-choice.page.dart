@@ -47,7 +47,7 @@ Future<Response> iokassaReques(
 "description": "${user.id}:${user.is_bot}:${user.first_name}:${message.message_id}:${message.chat.id}:${message.chat.type}:${message.date}:$balls"
 }''';
 
-  // print(body);
+  print(body);
 
   var response = await post(Uri.https('api.yookassa.ru', "/v3/payments"),
       headers: {
