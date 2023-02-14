@@ -24,6 +24,7 @@ class EventController extends IController {
     var body = await req.readAsString();
     var data = jsonDecode(body) /* ["object"] */;
 
+    print(data);
     String description = data["description"];
     var vars = description.split(':');
 
