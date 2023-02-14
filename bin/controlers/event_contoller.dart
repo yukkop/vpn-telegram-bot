@@ -26,6 +26,7 @@ class EventController extends IController {
 
     print(data);
     String description = data["description"];
+    print(description);
     var vars = description.split(':');
 
     print(vars);
