@@ -45,7 +45,6 @@ final paidFor1Year = Page(
         'pay${dialogDataSource.separator}gratitude', LayoutEnum.ru);
 
     return Page.stringf(message, [textForYear, rubForYear.toString()]);
-    ;
   }),
   renderMethod: Page.send,
 );

@@ -14,24 +14,6 @@ import '../../configurations.dart';
 import '../../variables.dart';
 import 'pay.const.dart';
 
-class DescriptionData {
-  User user;
-  Message message;
-  int price;
-  int balls;
-
-  DescriptionData(this.user, this.message, this.price, this.balls);
-
-  String toJson() => jsonEncode(toMap());
-
-  Map<String, dynamic> toMap() => {
-        "user": user.toJson(),
-        "message": message.toJson(),
-        "price": price,
-        "balls": balls
-      };
-}
-
 Future<Response> iokassaReques(
     User user, Message message, int price, int balls) async {
   var body = '''{

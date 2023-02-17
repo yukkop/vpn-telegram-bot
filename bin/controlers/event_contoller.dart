@@ -6,6 +6,8 @@ import 'package:http/http.dart' as http;
 import 'package:vpn_telegram_bot/loger.dart';
 import '../configurations.dart';
 
+import '../models/balance-increse-notify/request.model.dart'
+    as balance_increse_notify;
 import '../pages/pay/gratitude-pay.message.dart';
 import '../pages/pay/pay.const.dart';
 import '../pages/region/choice-region.page.dart';
@@ -16,8 +18,50 @@ class EventController extends IController {
 
   @override
   EventController addHandlers() {
-    router.post('/iokassa-paid', _iokassa);
+    router
+      ..post('/iokassa-paid', _iokassa)
+      ..post('/balance-increse-notify', _balanceIncreseNotify);
     return this;
+  }
+
+  /// {
+  ///   "user": {
+  ///     "id": <int>,
+  ///     "is_bot": <bool>,
+  ///     "first_name": <string>
+  ///   },
+  ///   "message": {
+  ///     "message_id": <int>,
+  ///     "data": <int>,
+  ///     "chat": {
+  ///       "id": <int>,
+  ///       "type": <string>
+  ///     }
+  ///   },
+  ///   "value": <int>
+  /// }
+  Future<Response> _balanceIncreseNotify(Request req) async {
+    var body = await req.readAsString();
+    var requestModel = balance_increse_notify.Request.fromJson(body);
+
+    if (requestModel.value == ballsForDay) {
+      await paidFor1Day.render(requestModel.message, requestModel.user);
+    } else if (requestModel.value == ballsForWeek) {
+      await paidFor1Week.render(requestModel.message, requestModel.user);
+    } else if (requestModel.value == ballsForMonth) {
+      await paidFor1Month.render(requestModel.message, requestModel.user);
+    } else if (requestModel.value == ballsForYear) {
+      await paidFor1Year.render(requestModel.message, requestModel.user);
+    }
+    regionChoiceReplace.render(requestModel.message, requestModel.user);
+
+    var response = await http.patch(Uri.http(Configurations.backendHost,
+        "/users/${requestModel.user.id}/addToBalance/${requestModel.value}"));
+
+    Loger.log('iokassa event',
+        userId: requestModel.user.id.toString(),
+        body: 'balance request: ${response.toString()}');
+    return Response.ok("ok");
   }
 
   Future<Response> _iokassa(Request req) async {
@@ -43,7 +87,6 @@ class EventController extends IController {
     );
 
     http.Response? response;
-    print('balls: $balls');
 
     if (balls == ballsForDay.toString()) {
       await paidFor1Day.render(message, user);
