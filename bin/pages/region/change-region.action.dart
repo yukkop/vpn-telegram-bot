@@ -75,7 +75,7 @@ void changeRegion(
 
       var configFileBody = jsonDecode(response.body)['configFile'];
 
-      final file = File('${username}_${regionName}_VPNster.conf');
+      final file = File('VPNster_${abriviateRegionName(regionName)}.conf');
       file.writeAsStringSync(configFileBody);
 
       await Page.sendFile(teleDart, message.chat.id, file);
@@ -88,6 +88,17 @@ void changeRegion(
     await wireguardInfo.render(message, user);
   }
   mainMenuSend.render(message, user);
+}
+
+String abriviateRegionName(String region) {
+  switch (region) {
+    case 'netherlands':
+      return 'NL';
+    case 'russia':
+      return 'RU';
+    default:
+      return 'XX';
+  }
 }
 
 final changeRegionRussia = Page(
