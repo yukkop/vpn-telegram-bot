@@ -1,36 +1,52 @@
 # VPNster bot
 
-some text
+## Project setup:
 
-### DOCS
+--------------------------
+## Запустить source service (curent git repo)
 
-Project setup:
-
-Запустить source service (curent git repo)
 Подключиться к консоли сервера (например использовав утилиту ssh)
+
 Использовать команду 
-git clone <path>
+
+`git clone <path>`
+
 Перейти в папку VPNster
-cd VPNster
+
+`cd VPNster`
+
 Прописать команду если используете Arch сервер
-docker compose up --build
-	или если используете Ubuntu сервер
-		docker-compose up --build
 
-Запустить bot service
+`docker compose up --build`
+
+или если используете Ubuntu сервер
+
+`docker-compose up --build`
+
+---------------------------------
+## Запустить bot service
 
 Подключиться к консоли сервера (например использовав утилиту ssh)
+
 Использовать команду 
-git clone <path>
+
+`git clone <path>`
+
 Перейти в папку VPNster
-cd VPNster
+
+`cd VPNster`
+
 При необходимости изменить содержимое конфиг файла config.yaml
+
 Прописать команду если используете Arch сервер
-docker compose up --build
-	или если используете Ubuntu сервер
-		docker-compose up --build
 
+`docker compose up --build`
 
+или если используете Ubuntu сервер
+
+`docker-compose up --build`
+
+-----------------------------
 `config.yaml`:
 ```
 botToken: '<bot token>'
