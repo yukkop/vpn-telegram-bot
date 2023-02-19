@@ -12,3 +12,15 @@ https://docs.google.com/document/d/1LvOXHLl3vDIyyFiaBLbkqCt8hWiWGuBoTbB1Sl4Qx1w/
 
 история сообщений с тем же ботом:
 https://drive.google.com/file/d/1N32Y9-Yju28qTHdAbgtoeTKumDw3uuGn/view?usp=share_link
+
+
+`config.yaml`:
+```
+botToken: '<bot token>'
+botUrl: 'https://t.me/<bot name>'
+layoutsPath: 'layouts.yaml'
+iokassaToken: '<iokassa token>'
+backend:
+  host: '<host>'
+  port: '<port>'
+```
