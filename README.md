@@ -4,14 +4,31 @@ some text
 
 ### DOCS
 
-документация по развертке проекта:
-https://docs.google.com/document/d/1l-2OCY8oS59iWU6wgwwhnhhcI463tkMWNL0xupGdNIE/edit?usp=share_link
+Project setup:
 
-сохраненный внешний вид бота, от заказчика:
-https://docs.google.com/document/d/1LvOXHLl3vDIyyFiaBLbkqCt8hWiWGuBoTbB1Sl4Qx1w/edit?usp=share_link
+Запустить source service (curent git repo)
+Подключиться к консоли сервера (например использовав утилиту ssh)
+Использовать команду 
+git clone <path>
+Перейти в папку VPNster
+cd VPNster
+Прописать команду если используете Arch сервер
+docker compose up --build
+	или если используете Ubuntu сервер
+		docker-compose up --build
 
-история сообщений с тем же ботом:
-https://drive.google.com/file/d/1N32Y9-Yju28qTHdAbgtoeTKumDw3uuGn/view?usp=share_link
+Запустить bot service
+
+Подключиться к консоли сервера (например использовав утилиту ssh)
+Использовать команду 
+git clone <path>
+Перейти в папку VPNster
+cd VPNster
+При необходимости изменить содержимое конфиг файла config.yaml
+Прописать команду если используете Arch сервер
+docker compose up --build
+	или если используете Ubuntu сервер
+		docker-compose up --build
 
 
 `config.yaml`:
