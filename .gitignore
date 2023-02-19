@@ -10,3 +10,4 @@ build/
 qr.png
 VPNconf.conf
 config.yaml
+logs.log
