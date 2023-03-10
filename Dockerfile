@@ -15,7 +15,7 @@ RUN touch /bin/logs.log
 
 # Build minimal serving image from AOT-compiled `/server`
 # and the pre-built AOT-runtime in the `/runtime/` directory of the base image.
-# FROM scratch
+FROM ubuntu
 COPY --from=build /runtime/ /
 COPY --from=build /app/bin/server /app/bin/
 COPY /config.yaml ./
