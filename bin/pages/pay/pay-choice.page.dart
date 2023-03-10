@@ -80,7 +80,7 @@ final payFor1Month = Page(
   renderMethod: Page.edit,
 );
 
-late final payFor1Year = Page(
+final payFor1Year = Page(
   name: 'Страница оплаты на 1 год',
   text: Text.function((pageMessage, user) async {
     var message = dialogDataSource.getMessage(

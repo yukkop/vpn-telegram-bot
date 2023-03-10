@@ -64,6 +64,11 @@ class EventController extends IController {
     return Response.ok("ok");
   }
 
+  Future<Response> _balanceNotify(Request req) async {
+    // TODO
+    return Response.ok("ok");
+  }
+
   Future<Response> _iokassa(Request req) async {
     var body = await req.readAsString();
     var data = jsonDecode(body)["object"];
