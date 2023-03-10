@@ -14,7 +14,20 @@ import '../info/instruction.message.dart';
 // Недостаток самописной утилиты, оборачиваю множество действий под пустую страницу, хотя это не требуеться
 void changeRegion(
     String regionName, teleDart, message, user, text, markup) async {
-  await teleDart.deleteMessage(message.chat.id, message.message_id);
+  
+  Loger.log("Info", body: '''regionName: $regionName,
+        teledart: $teleDart,
+        message: $message,
+        user: $user,
+        text: $text,
+        markup: $markup''');
+
+  Loger.log("Info", body: "try to delete chat_id: ${message.chat.id} message_id: ${message.message_id}");
+  try {
+    await teleDart.deleteMessage(message.chat.id, message.message_id);
+  } catch (e) {
+    Loger.log("Error", body: e.toString());
+  }
 
   Response response;
 
