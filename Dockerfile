@@ -19,8 +19,8 @@ COPY --from=build /runtime/ /
 COPY --from=build /app/bin/server /app/bin/
 COPY /config.yaml ./
 COPY /layouts.yaml ./
-COPY /logs.log /app/bin/
+RUN touch /app/bin/logs.log
 
 # Start server.
-EXPOSE 8081
+EXPOSE 8083
 CMD ["/app/bin/server"]
