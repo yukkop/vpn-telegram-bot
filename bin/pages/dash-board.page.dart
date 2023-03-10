@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart';
 import 'package:vpn_telegram_bot/data/layout.enum.dart';
+import 'package:vpn_telegram_bot/loger.dart';
 import 'package:vpn_telegram_bot/page-giga-mega-trash/button.hectic-tg.dart';
 import 'package:vpn_telegram_bot/page-giga-mega-trash/keyboard.hectic-tg.dart';
 import 'package:vpn_telegram_bot/page-giga-mega-trash/page.hectic-tg.dart';
@@ -15,19 +16,34 @@ import 'region/choice-region.page.dart';
 import 'system/empty.page.dart';
 
 final dashBoardText = Text.function((pageMessage, user) async {
-  var response =
-      await get(Uri.http(Configurations.backendHost, "/users/${user.id}"));
+  try {
+    var response =
+        await get(Uri.http(Configurations.backendHost, "/users/${user.id}"));
 
-  var responseBody = jsonDecode(response.body);
-  final username = responseBody['username'];
-  final balance = responseBody['balance'];
+    var responseBody = jsonDecode(response.body);
+    final username = responseBody['username'];
+    final balance = responseBody['balance'];
 
-  var message = dialogDataSource.getMessage('dash-board', LayoutEnum.ru);
+    var message = dialogDataSource.getMessage('dash-board', LayoutEnum.ru);
 
-  final string =
+    final string =
+        Page.stringf(message, [username.toString(), balance.toString()]);
+
+    return string;
+  }
+  catch (e) {
+    Loger.log('Error', body: e.toString());
+
+    final username = 'username';
+    final balance = 'balance';
+
+    var message = dialogDataSource.getMessage('dash-board', LayoutEnum.ru);
+
+    final string =
       Page.stringf(message, [username.toString(), balance.toString()]);
 
-  return string;
+    return string;
+  }
 });
 
 final dashBoard = Page(
