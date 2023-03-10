@@ -6,4 +6,4 @@ services:
     build: .
     restart: always
     volumes:
-      - ./logs.log:/app/logs.log
+      - ./logs.log:/app/bin/logs.log
