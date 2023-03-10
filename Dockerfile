@@ -11,6 +11,7 @@ RUN dart pub get
 # Copy app source code (except anything in .dockerignore) and AOT compile app.
 COPY . .
 RUN dart compile exe bin/vpn-telegram-bot.source.dart -o bin/server
+RUN touch /bin/logs.log
 
 # Build minimal serving image from AOT-compiled `/server`
 # and the pre-built AOT-runtime in the `/runtime/` directory of the base image.
@@ -19,7 +20,6 @@ COPY --from=build /runtime/ /
 COPY --from=build /app/bin/server /app/bin/
 COPY /config.yaml ./
 COPY /layouts.yaml ./
-RUN touch /app/bin/logs.log
 
 # Start server.
 EXPOSE 8083
